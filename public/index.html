@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>旅游攻略,自由行,自助游攻略,旅游社交分享网站 - 蚂蜂窝</title>
+    <link rel="shortcut icon" href="img/bitbug_favicon.ico">
+    <link href="style/main.css" rel="stylesheet">
+    <link href="style/main_aside.css" rel="stylesheet">
+    <link href="style/main_wrapper.css" rel="stylesheet">
+    <link href="style/main_footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/resize.css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery-slimScroll.js"></script>
+    <script src="js/angular-cookies.min.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="c">
+    <!-- 头部开始 -->
+    <div class="mfw-header">
+        <div class="header-wrap">
+            <!-- logo -->
+            <div class="header-logo fl">
+                <a class="mfw-logo" href="mfw-logo" title="马蜂窝自由行"></a>
+            </div>
+            <!-- 导航 -->
+            <ul class="header-nav fl">
+                <li class="fl bg-orange"><a href="">首页</a></li>
+                <li class="fl"><a href="tpl/mdd.html" title="目的地">目的地</a>
+                    <p class="bg-line"></p>
+                </li>
+                <li class="fl"><a href="" title="旅游攻略">旅游攻略</a><span class="bg-line"></span></li>
+                <li class="fl sales">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="自由行商城">
+                            <span>自由行商城<i class="icon-down"></i></span>
+                        </a>
+                    <div class="dropdown-menu dropdown-sales">
+                        <ul>
+                            <li><a target="_blank" href="">机票＋酒店<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="">跟团游</a></li>
+                            <li><a target="_blank" href="">当地游</a></li>
+                            <li><a target="_blank" href="">国内机票<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="">签证</a></li>
+                            <li><a target="_blank" href="">国际租车</a></li>
+                            <li><a target="_blank" href="">保险</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="酒店">酒店</a><span class="bg-line"></span></li>
+                <li class="fl community">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="社区">
+                        <span>社区<i class="icon-down"></i></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-community">
+                        <ul class="nav-list fl">
+                            <li class="fc-orange"><a target="_blank" href="" title="问答">问答<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝周边">蚂蜂窝周边<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="" title="蜂蜜兑换">蜂蜜兑换</a></li>
+                            <li class="h"><a target="_blank" href="" title="结伴">结伴</a></li>
+                        </ul>
+                        <ul class="nav-list-sub fl">
+                            <li><a target="_blank" href="" title="小组论坛">小组论坛</a></li>
+                            <li><a target="_blank" href="" title="分舵同城">分舵同城</a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝拍卖行">蚂蜂窝拍卖行</a></li>
+                            <li><a target="_blank" href="" title="蜂首聚乐部">蜂首聚乐部</a></li>
+                            <li><a target="_blank" href="" title="照片PK">照片PK</a></li>
+                            <li><a target="_blank" href="" title="真人兽">真人兽</a></li>
+                            <li><a target="_blank" href="" title="道具商店">道具商店</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="APP">APP</a><span class="bg-line"></span></li>
+            </ul>
+            <!-- 未登录时导航栏右侧 -->
+            <div class="login-out fr" ng-show="mycookie">
+                <a class="weibo-login" href="" title="微博登录"></a>
+                <a class="qq-login" href="" title="QQ登录"></a>
+                <a class="weixin-login" href="" title="微信登录"></a>
+                <a class="login" href="tpl/login.html" title="登录蚂蜂窝">登录</a>
+                <span>|</span>
+                <a class="signin" href="tpl/register.html" title="注册帐号">注册</a>
+            </div>
+            <!-- 登录时导航栏右侧 -->
+            <div class="login-info fr" ng-hide="mycookie">
+                <div class="header-daka fl">
+                    <a class="header-daka-btn text-center">打卡</a>
+                </div>
+                <div class="header-msg fl">
+                    <a><i class="icon-msg"></i>消息
+                    <i class="icon-down"></i></a>
+                    <div class="dropdown-menu dropdown-msg">
+                        <ul>
+                            <li class="text-left"><a target="_blank" href="" title="私信">私信</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="文章消息">文章消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="小组消息">小组消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="系统通知">系统通知</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="问答消息">问答消息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-user fl">
+                    <a href="">
+                        <div class="user-image">
+                            <img src="img/user-img.jpeg">
+                            <i class="icon-down"></i>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-user">
+                        <ul>
+                            <li class="text-left"><b class="i1"></b><a target="_blank" href="" title="我的马蜂窝">我的马蜂窝</a></li>
+                            <li class="text-left"><b class="i2"></b><a target="_blank" href="note/create/modify.html" title="写游记">写游记</a></li>
+                            <li class="text-left"><b class="i3"></b><a target="_blank" href="" title="预约游记">预约游记</a></li>
+                            <li class="text-left"><b class="i4"></b><a target="_blank" href="" title="我的足迹">我的足迹</a></li>
+                            <li class="text-left"><b class="i5"></b><a target="_blank" href="" title="我的问答">我的问答</a></li>
+                            <li class="text-left"><b class="i6"></b><a target="_blank" href="" title="我的好友">我的好友</a></li>
+                            <li class="text-left"><b class="i7"></b><a target="_blank" href="" title="我的收藏">我的收藏</a></li>
+                            <li class="text-left"><b class="i8"></b><a target="_blank" href="" title="我的路线">我的路线</a></li>
+                            <li class="text-left"><b class="i9"></b><a target="_blank" href="" title="我的订单">我的订单</a></li>
+                            <li class="text-left"><b class="i10"></b><a target="_blank" href="" title="我的优惠券">我的优惠券</a></li>
+                            <li class="text-left"><b class="i11"></b><a target="_blank" href="" title="设置">设置</a></li>
+                            <li class="text-left" ng-click="leave()"><b class="i12"></b><a target="_blank" href="" title="退出">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow">
+        </div>
+    </div>
+    <!-- 头部结束 -->
+    <!-- banner位开始 -->
+    <div class="banner clear">
+        <!-- banner位图片及文字展示 -->
+        <ul class="show-image">
+            <li ng-repeat="bannerData in bannerDatas">
+                <a href="" target="_blank" class="show-pic">
+                    <img ng-src="{{bannerData.imgUrl}}">
+                </a>
+                <a href="" target="_blank" class="show-title">
+                    <div class="date">
+                        <span class="day">{{bannerData.imgDate}}</span>/Oct.2017
+                    </div>
+                    <h3>{{bannerData.imgTxt}}</h3>
+                </a>
+                <p class="show-info text-left">
+                    图片来自于<a href="" target="_blank">{{bannerData.imgPlace}}</a>，此目的地共收藏了<a href="" target="_blank">{{bannerData.imgNum}}</a>张
+                    <a href="" target="_blank">{{bannerData.imgPlace}}</a>图片。本片由<a href="" target="_blank">{{bannerData.imgFrom}}</a>荣誉出品！
+                </p>
+            </li>
+        </ul>
+        <!-- banner位图片按钮 -->
+        <ul class="show-nav">
+            <li ng-repeat="bannerData in bannerDatas" ng-click="carousel($index)">
+                <a href="" target="_blank">
+                    <img ng-src="{{bannerData.imgUrl}}">
+                </a>
+            </li>
+        </ul>
+        <!-- 搜索框 -->
+        <div class="search-container">
+            <div class="search-group">
+                <div class="search-tab">
+                    <ul>
+                        <li class=""><i></i>全部</li>
+                        <li class=""><i></i>酒店</li>
+                        <li class=""><i></i>目的地</li>
+                        <li class=""><i></i>自由行商城</li>
+                    </ul>
+                </div>
+                <div class="search-bar">
+                    <div class="search-wrapper fl">
+                        <div class="search-input search-all">
+                            <input type="text" placeholder="搜目的地/攻略/酒店/旅行特价">
+                        </div>
+                        <div class="search-input search-hotle">
+                            <input type="text" placeholder="请输入国家、地区、城市名称">
+                        </div>
+                        <div class="search-input search-mdd">
+                            <input type="text" placeholder="我要去...">
+                        </div>
+                        <div class="search-input search-sales">
+                            <input type="text" placeholder="产品名称/目的地/优惠">
+                        </div>
+                    </div>
+                    <div class="search-btn fl">
+                        <i class="icon-search"></i>
+                    </div>
+                </div>
+                <!-- 搜索框结束 -->
+            </div>
+        </div>
+    </div>
+    <!-- banner位结束 -->
+    <!-- 主要内容开始 -->
+    <div class="mfw-container clear">
+        <!-- 侧边栏开始 -->
+        <div class="mfw-aside">
+            <!-- 广告位 -->
+            <div class="da-banner">
+                <a href="">
+                    <img src="img/da-banner-1.jpeg">
+                </a>
+                <img src="img/icon-ad.png">
+            </div>
+            <!-- 旅行家专栏 -->
+            <div class="asidebox box-traveller">
+                <div class="asidebox-hd">
+                    <h2 class="hd-title">
+                        <a href="">旅行家专栏</a>
+                    </h2>
+                    <a class="hd-right" href="">专栏首页</a>
+                </div>
+                <div class="asidebox-bd">
+                    <ul class="slide-ul">
+                        <li ng-repeat="travellerData in travellerDatas">
+                            <div class="image">
+                                <a href=""><img ng-src="../{{travellerData.imgUrl}}"></a>
+                            </div>
+                            <h3><a href="">{{travellerData.title}}</a></h3>
+                            <p>{{travellerData.content}}</p>
+                        </li>
+                    </ul>
+                    <ol class="slide-ol">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- 旅游攻略推荐 -->
+            <div class="asidebox box-strategy">
+                <div class="asidebox-hd">
+                    <h2 class="hd-title">
+                        <a href="">旅游攻略推荐</a>
+                    </h2>
+                    <a class="hd-right" href="">更多</a>
+                </div>
+                <div class="asidebox-bd">
+                    <div class="strategy-item">
+                        <div class="img">
+                            <a href="">
+                                <img src="img/gl.jpeg">
+                            </a>
+                            <span class="mark">自由行攻略</span>
+                        </div>
+                        <h3>
+                            <a href="" target="_blank">在高山铁路体验森林小火车，看完就能去~</a>
+                        </h3>
+                    </div>
+                    <ul>
+                        <li><a href="">蚂蜂窝用</a> 点评了 Bo Phut的 <a href="">苏梅岛拉瓦纳</a></li>
+                        <li><a href="">miaojinx</a> 点评了 亚龙湾的 <a href="">四川小胡子海</a></li>
+                        <li><a href="">p710571</a> 点评了 亚龙湾的 <a href="">雪姐海鲜加工</a></li>
+                        <li><a href="">蚂蜂窝用</a> 点评了 武陵源区的 <a href="">张家界悠然居</a></li>
+                        <li><a href="">yutazhua</a> 点评了 亚龙湾的 <a href="">四川小胡子海</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 我的活动 -->
+            <div class="asidebox box-activity">
+                <div class="asidebox-hd">
+                    <h2 class="hd-title">我的活动</h2>
+                    <span class="hd-right">
+                        <a>正在进行</a> <span>|</span> <a>我参加的</a>
+                    </span>
+                </div>
+                <div class="h390">
+                    <div class="asidebox-bd">
+                        <a ng-repeat="activityData in activityDatas" href="" class="act-item">
+                            <img ng-src="../{{activityData.imgUrl}}">
+                            <strong>{{activityData.title}}</strong>
+                            <br>{{activityData.content}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 加入马蜂窝 -->
+            <div class="asidebox box-hr">
+                <div class="asidebox-hd">
+                    <h2 class="hd-title">
+                        <a href="">加入马蜂窝</a>
+                    </h2>
+                    <a class="hd-right" href="">更多职位></a>
+                </div>
+                <div class="asidebox-bd">
+                    <a href=""><img src="img/hr.jpg"></a>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>申请职位></span>广告销售经理
+                                <i>HOT</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>申请职位></span>资深PHP开发工程师
+                                <i>HOT</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>申请职位></span>广告执行经理
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 马蜂窝旅行网站最新进展 -->
+            <div class="asidebox box-news">
+                <div class="asidebox-hd">
+                    <h2 class="hd-title"> 马蜂窝旅行网站最新进展</h2>
+                </div>
+                <ul class="asidebox-bd">
+                    <li ng-repeat="newsData in newsDatas">{{newsData.date}}
+                        <a href="" target="_blank">{{newsData.title}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 侧边栏结束 -->
+        <!-- 首页主要内容开始 -->
+        <div class="mfw-wrapper fr">
+            <!-- 广告位 -->
+            <div class="da-banner">
+                <a href=""><img src="img/da-banner-2.jpeg"></a>
+                <img src="img/icon-ad.png">
+            </div>
+            <!-- 爆款热销 -->
+            <div class="mfw-sales">
+                <div class="hd">爆款热卖</div>
+                <div class="bd">
+                    <ul class="clear">
+                        <li ng-repeat="salesData in salesDatas" class="item fl">
+                            <a href="">
+                                <div class="image">
+                                    <img ng-src="../{{salesData.imgUrl}}">
+                                    <span ng-if="salesData.discount==null?false:true" class="discount">
+                                        <b>{{salesData.discount}}</b>
+                                    </span>
+                                    <div ng-if="salesData.time==null?false:true" class="info">
+                                        <span class="price">¥
+                                            <strong>{{salesData.price}}</strong>
+                                        </span> {{salesData.time}}
+
+                                    </div>
+                                </div>
+                                <h3>{{salesData.content}}</h3>
+                                <div class="price">
+                                    ¥<strong>{{salesData.price}}</strong>
+                                    <em>起</em>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 游记 -->
+            <div class="mfw-travelnotes" id="mfw-travelnotes">
+                <!-- 游记导航 -->
+                <div class="navbar clear">
+                    <ul class="tn-nav">
+                        <li class="tn-nav-hot">
+                            <a href="" ng-click="getData()">热门游记</a>
+                            <span class="tn-menu" ng-click="openList()">
+                                <i class="tn-menu-icon"></i>筛选
+                            </span>
+                        </li>
+                        <!-- <li class="tn-nav-new">
+                            <a href="" ng-click="getNewData()">最新发表</a>
+                        </li> -->
+                    </ul>
+                    <div class="tn-write">
+                        <a class="btn-add" href="note/create/modify.html">
+                            <i></i>写游记
+                        </a>
+                    </div>
+                    <a class="tn-tips" href="">
+                        <i></i>
+                        我要上首页
+                    </a>
+                </div>
+                <!-- 文章筛选框 -->
+                <div ng-show="showList" class="tn-dropdown-pop">
+                    <i class="close" ng-click="closeList()">×</i>
+                    <div class="section">
+                        <div class="label">兴趣</div>
+                        <div class="section-cont">
+                            <ul class="interest-list">
+                                <li ng-repeat="interestsData in interestsDatas" ng-click="chooseInterest(interestsData.title)">
+                                    <a>
+                                        <span class="img">
+                                            <img ng-src="../{{interestsData.imgUrl}}">
+                                        </span>
+                                        <h3>{{interestsData.title}}</h3>
+                                        <p>{{interestsData.content}}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tn-selected" ng-show="showSelected">
+                    <a class="tn-tag">{{title}}<i ng-click="closeSelected()"></i></a>
+                </div>
+                <!-- 游记内容 -->
+                <div class="tn-content">
+                    <div class="tn-list">
+                        <div ng-repeat="noteData in noteDatas" class="tn-item clear" ng-click="readAdd1(noteData.id,noteData.readNum,$event)">
+                            <div class="tn-image">
+                                <a ng-href="note/create/{{noteData.id}}.html" target="_blank">
+                                    <img ng-src="{{noteData.imgUrl}}">
+                                </a>
+                            </div>
+                            <div class="tn-wrapper">
+                                <dl>
+                                    <dt><a ng-href="note/create/{{noteData.id}}.html" target="_blank">{{noteData.title}}</a></dt>
+                                    <dd><a ng-href="note/create/{{noteData.id}}.html" target="_blank">{{noteData.content}}</a></dd>
+                                </dl>
+                                <div class="tn-extra">
+                                    <span class="tn-ding">
+                                        <a class="btn-ding" ng-click="dingAdd1(noteData.id,noteData.dingNum,$event,interestsData.title)"></a>
+                                        <em>{{noteData.dingNum}}</em>
+                                    </span>
+                                    <span class="tn-place">
+                                        <i></i>
+                                        <a>{{noteData.place}}</a>
+                                        , by
+                                    </span>
+                                    <span class="tn-user">{{noteData.userName}}</span>
+                                    <span class="tn-nums">
+                                    <i></i>
+                                    {{noteData.readNum}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-pagination">
+                        <span class="count">共{{pageNum}}页 / {{pageitems}}条</span>
+                        <a class="pageitem" ng-repeat="data in datas" ng-click="showData($index+1)">{{data}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 首页主要内容结束 -->
+        <!-- 广告位 -->
+        <div class="da-banner da-banner-row">
+            <a target="_blank" href="">
+                <img src="img/banner-row.jpeg">
+            </a>
+            <img src="img/icon-ad.png">
+        </div>
+    </div>
+    <!-- 主要内容开始 -->
+    <!-- 底部开始 -->
+    <div class="footer">
+        <div class="ft-content">
+            <!-- 马蜂窝信息 -->
+            <div class="ft-info">
+                <dl class="ft-info-col ft-info-intro">
+                    <dt>中国领先的自由行服务平台</dt>
+                    <dd>覆盖全球200多个国家和地区</dd>
+                    <dd><strong>100,000,000</strong> 位旅行者</dd>
+                    <dd><strong>920,000</strong> 家国际酒店</dd>
+                    <dd><strong>21,000,000</strong> 条真实点评</dd>
+                    <dd><strong>382,000,000</strong> 次攻略下载</dd>
+                    <dd><strong>中国旅游行业第一部“玩法”</strong></dd>
+                </dl>
+                <dl class="ft-info-col ft-info-about">
+                    <dt>关于我们</dt>
+                    <dd><a href="">关于蚂蜂窝</a></dd>
+                    <dd><a href="">网络信息侵权通知指引</a></dd>
+                    <dd><a href="">隐私政策</a></dd>
+                    <dd><a href="">服务协议</a></dd>
+                    <dd><a href="">联系我们</a></dd>
+                    <dd class="fc-orange"><a href="">加入蚂蜂窝</a></dd>
+                </dl>
+                <dl class="ft-info-col ft-info-service">
+                    <dt class="text-center">旅行服务</dt>
+                    <dd>
+                        <ul class="clear">
+                            <li><a href="">旅游攻略</a></li>
+                            <li><a href="">酒店预订</a></li>
+                            <li><a href="">旅游特价</a></li>
+                            <li><a href="">国际租车</a></li>
+                            <li><a href="">旅游问答</a></li>
+                            <li><a href="">旅游保险</a></li>
+                            <li><a href="">旅游指南</a></li>
+                            <li><a href="">订火车票</a></li>
+                            <li><a href="">旅游资讯</a></li>
+                            <li><a href="">APP下载</a></li>
+                            <li class="fc-orange"><a href="">全球供应商入驻</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="ft-info-col ft-info-qrcode">
+                    <dd>
+                        <span class="ft-qrcode-tejia"></span>
+                        <p>蚂蜂窝良品<br>官方服务号</p>
+                    </dd>
+                    <dd>
+                        <span class="ft-qrcode-weixin"></span>
+                        <p>蚂蜂窝自由行<br>订阅号</p>
+                    </dd>
+                </dl>
+                <dl class="ft-info-social">
+                    <dt>关注我们</dt>
+                    <dd>
+                        <a class="ft-social-weibo"><i class="ft-social-icon"></i></a>
+                        <a class="ft-social-qqt"><i class="ft-social-icon"></i></a>
+                        <a class="ft-social-qzone"><i class="ft-social-icon"></i></a>
+                    </dd>
+                </dl>
+            </div>
+            <!-- 友情链接 -->
+            <div class="ft-links">
+                <a href="" target="_blank">马可波罗</a>
+                <a href="" target="_blank">Onlylady女人志</a>
+                <a href="" target="_blank">艺龙旅游指南</a>
+                <a href="" target="_blank">欣欣旅游网</a>
+                <a href="" target="_blank">户外运动</a>
+                <a href="" target="_blank">365音乐网</a>
+                <a href="" target="_blank">爱问共享资料</a>
+                <a href="" target="_blank">旅游网</a>
+                <a href="" target="_blank">小说网</a>
+                <a href="" target="_blank">学习啦</a>
+                <a href="" target="_blank">游多多自助游</a>
+                <a href="" target="_blank">问答</a>
+                <a href="" target="_blank">火车时刻表</a>
+                <a href="" target="_blank">驴妈妈旅游网</a>
+                <a href="" target="_blank">好豆美食网</a>
+                <a href="" target="_blank">二手车</a>
+                <a href="" target="_blank">绿野户外</a>
+                <a href="" target="_blank">途牛旅游网</a>
+                <a href="" target="_blank">图吧</a>
+                <a href="" target="_blank">SUV联合越野</a>
+                <a href="" target="_blank">手机浏览器</a>
+                <a href="" target="_blank">上海地图</a>
+                <a href="" target="_blank">天气预报查询</a>
+                <a href="" target="_blank">同程旅游</a>
+                <a href="" target="_blank">火车票</a>
+                <a href="" target="_blank">YunOS</a>
+                <a href="" target="_blank">携程旅游</a>
+                <a href="" target="_blank">锦江旅游</a>
+                <a href="" target="_blank">火车时刻表</a>
+                <a href="" target="_blank">TripAdvisor</a>
+                <a href="" target="_blank">天巡网</a>
+                <a href="" target="_blank">短租房</a>
+                <a href="" target="_blank">租租车</a>
+                <a href="" target="_blank">五分旅游网</a>
+                <a href="" target="_blank">酒店预订</a>
+                <a href="" target="_blank">爱旅行网</a>
+                <a href="" target="_blank">旅游</a>
+                <a href="" target="_blank">旅游网</a>
+                <a href="" target="_blank">wed114结婚网</a>
+                <a href="" target="_blank">车讯网</a>
+                <a href="" target="_blank">遨游旅游网</a>
+                <a href="" target="_blank">手机</a>
+                <a href="" target="_blank">更多友情链接>></a>
+            </div>
+            <!-- 版权 -->
+            <div class="ft-copyright">
+                <div class="ft-safety">
+                    <a class="s-a"></a>
+                    <a class="s-b"></a>
+                    <a class="s-c"></a>
+                </div>
+                <a href="index.html">
+                    <i class="ft-mfw-logo"></i>
+                </a>
+                <p>© 2017 Mafengwo.cn <a href="">京ICP备11015476号</a> 京公网安备110105013401号 <a href="">京ICP证110318号</a></p>
+                <p><a href="">营业执照</a> 新出网证(京)字242号 全国统一客服电话：<span class="fc-orange">4006-345-678</span> <a href="" class="fc-orange">网站地图</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- 底部结束 -->
+
+</body>
+
+</html>

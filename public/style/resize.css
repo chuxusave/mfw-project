@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body,ul,ol,dt,dd,dl,li,p,h1,h2,h3,h4,h5,h6,img,a {
+    margin:0;padding:0;
+}
+
+body {
+    color:#555;
+    font-size:14px;
+    font-family: "微软雅黑"；
+}
+
+ol,ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.fl {
+    float:left;
+}
+
+.fr {
+    float:right;
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    height:0;
+    visibility: hidden;
+    clear:both;
+}

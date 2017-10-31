@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>马蜂窝 - 后台管理系统</title>
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-cookies.min.js"></script>
+    <link rel="stylesheet" href="style/admin.css">
+    <link rel="shortcut icon" href="../img/bitbug_favicon.ico">
+    <link rel="stylesheet" href="../style/resize.css">
+    <script src="js/admin.js"></script>
+
+</head>
+
+<body ng-app="app" ng-controller="adminC">
+    <div class="layout" ng-show="mycookie">
+        <div class="header">
+            <div class="logo">后台管理系统</div>
+            <ul class="nav nav_right">
+                <li>
+                    <a href="">
+                        <label for="file"><img src="img/user-img.jpeg"></label>
+                        <input type="file" id="file" class="file">
+                        {{username}}
+                    </a>
+                </li>
+                <li class="leave" ng-click="leave()"><a href="tpl/admin_login.html">退出</a></li>
+            </ul>
+        </div>
+        <div class="left_side">
+            <ul class="nav">
+                <li>
+                    <a ng-click="show1()">侧边栏管理</a>
+                    <span class="nav_more"></span>
+                    <dl ng-show="showList1">
+                        <dd><a href="tpl/activity.html" target="showWindow">活动管理</a></dd>
+                        <dd><a href="tpl/traveller.html" target="showWindow">旅行家专栏管理</a></dd>
+                        <dd><a href="tpl/news.html" target="showWindow">新闻管理</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a ng-click="show2()">主页内容管理</a>
+                    <span class="nav_more"></span>
+                    <dl ng-show="showList2">
+                        <dd><a href="tpl/banner.html" target="showWindow">banner位管理</a></dd>
+                        <dd><a href="tpl/sales.html" target="showWindow">爆款热卖商品管理</a></dd>
+                        <dd><a href="tpl/interests.html" target="showWindow">兴趣分类管理</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="tpl/note.html" target="showWindow">文章管理</a>
+                </li>
+                <li>
+                    <a href="tpl/user.html" target="showWindow">会员管理</a>
+                </li>
+            </ul>
+            <div class="line"></div>
+        </div>
+    </div>
+    <iframe name="showWindow" src="tpl/activity.html">
+
+    </iframe>
+</body>

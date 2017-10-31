@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>马蜂窝 - 后台管理系统</title>
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../style/ngTable.css">
+    <script src="../js/lodash.min.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../js/ng-table.min.js"></script>
+    <link rel="stylesheet" href="../style/table.css">
+    <script src="../js/note.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" class="container-fluid">
+        <div class="row">
+            <div class="col-md-9" ng-controller="demoController as demo">
+                <h3>文章管理</h3>
+                <p>*注意：1.管理员仅有权限更改目的地以及文章分类，若有违规内容可直接删除。2.已删除的数据不能恢复，请谨慎删除</p>
+                <table ng-table="demo.tableParams" class="table table-bordered table-hover table-condensed editable-table demoTable" ng-form="demo.tableForm"
+                    disable-filter="demo.isAdding" demo-tracked-table="demo.tableTracker">
+                    <colgroup>
+                        <col width="8%" />
+                        <!-- <col width="5%" /> -->
+                        <col width="15%" />
+                        <col width="30%" />
+                        <col width="10%" />
+                        <col width="12%" />
+                        <col width="12%" />
+                        <col width="14%" />
+                        <!-- <col width="5%" /> -->
+                        <col width="10%" />
+                        <col width="8%" />
+                    </colgroup>
+                    <tr ng-repeat="row in $data" ng-form="rowForm" demo-tracked-table-row="row">
+                        <td title="'序号'" filter="{id: 'number'}" sortable="'id'" ng-switch="row.isEditing" ng-class="id.$dirty ? 'bg-warning' : ''"
+                            ng-form="id" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.id}}</span>
+                            <div class="controls" ng-class="id.$invalid && id.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="number" name="id" ng-model="row.id" class="editable-input form-control input-sm" disabled />
+                            </div>
+                        </td>
+                        <!-- <td title="'图片地址'" filter="{imgUrl: 'text'}" sortable="'imgUrl'" ng-switch="row.isEditing" ng-class="imgUrl.$dirty ? 'bg-warning' : ''"
+                            ng-form="imgUrl" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.imgUrl}}</span>
+                            <div class="controls" ng-class="imgUrl.$invalid && imgUrl.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="imgUrl" ng-model="row.imgUrl" class="editable-input form-control input-sm" disabled />
+                            </div>
+                        </td> -->
+                        <td title="'标题'" filter="{title: 'text'}" sortable="'title'" ng-switch="row.isEditing" ng-class="title.$dirty ? 'bg-warning' : ''"
+                            ng-form="title" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.title}}</span>
+                            <div class="controls" ng-class="title.$invalid && title.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="title" ng-model="row.title" class="editable-input form-control input-sm" disabled />
+                            </div>
+                        </td>
+                        <td title="'内容'" filter="{content: 'text'}" sortable="'content'" ng-switch="row.isEditing" ng-class="content.$dirty ? 'bg-warning' : ''"
+                            ng-form="content" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.content}}</span>
+                            <div class="controls" ng-class="content.$invalid && content.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="content" ng-model="row.content" class="editable-input form-control input-sm" disabled />
+                            </div>
+                        </td>
+                        <td title="'目的地'" filter="{place: 'text'}" sortable="'place'" ng-switch="row.isEditing" ng-class="place.$dirty ? 'bg-warning' : ''"
+                            ng-form="place" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.place}}</span>
+                            <div class="controls" ng-class="place.$invalid && place.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="place" ng-model="row.place" class="editable-input form-control input-sm" required />
+                            </div>
+                        </td>
+                        <!-- <td title="'用户名'" filter="{userName: 'text'}" sortable="'userName'" ng-switch="row.isEditing" ng-class="userName.$dirty ? 'bg-warning' : ''"
+                            ng-form="userName" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.userName}}</span>
+                            <div class="controls" ng-class="userName.$invalid && userName.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="userName" ng-model="row.userName" class="editable-input form-control input-sm" disabled />
+                            </div>
+                        </td> -->
+                        <td title="'文章分类'" filter="{classify: 'text'}" sortable="'classify'" ng-switch="row.isEditing" ng-class="classify.$dirty ? 'bg-warning' : ''"
+                            ng-form="classify" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.classify}}</span>
+                            <div class="controls" ng-class="classify.$invalid && classify.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="classify" ng-model="row.classify" class="editable-input form-control input-sm" />
+                            </div>
+                        </td>
+
+                        <td title="'置顶总数'" filter="{dingNum: 'number'}" sortable="'dingNum'" ng-switch="row.isEditing" ng-class="dingNum.$dirty ? 'bg-warning' : ''"
+                            ng-form="dingNum" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.dingNum}}</span>
+                            <div class="controls" ng-class="dingNum.$invalid && dingNum.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="number" name="dingNum" ng-model="row.dingNum" class="editable-input form-control input-sm" disabled />
+                            </div>
+                        </td>
+                        <td title="'阅读总数'" filter="{readNum: 'number'}" sortable="'readNum'" ng-switch="row.isEditing" ng-class="readNum.$dirty ? 'bg-warning' : ''"
+                            ng-form="readNum" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.readNum}}</span>
+                            <div class="controls" ng-class="readNum.$invalid && readNum.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="number" name="readNum" ng-model="row.readNum" class="editable-input form-control input-sm" disabled />
+                            </div>
+                        </td>
+                        <!-- <td title="'文章发布时间'" filter="{time: 'text'}" sortable="'time'" ng-switch="row.isEditing" ng-class="time.$dirty ? 'bg-warning' : ''"
+                            ng-form="time" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.time}}</span>
+                            <div class="controls" ng-class="time.$invalid && time.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="time" ng-model="row.time" class="editable-input form-control input-sm" disabled/>
+                            </div>
+                        </td> -->
+                        <td>
+                            <button class="btn btn-primary btn-sm" ng-click="demo.save(row, rowForm)" ng-if="row.isEditing" ng-disabled="rowForm.$pristine || rowForm.$invalid"><span class="glyphicon glyphicon-ok"></span></button>
+                            <button class="btn btn-default btn-sm" ng-click="demo.cancel(row, rowForm)" ng-if="row.isEditing"><span class="glyphicon glyphicon-remove"></span></button>
+                            <button class="btn btn-default btn-sm" ng-click="row.isEditing = true" ng-if="!row.isEditing"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <button class="btn btn-danger btn-sm" ng-click="demo.del(row)" ng-if="!row.isEditing"><span class="glyphicon glyphicon-trash"></span></button>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

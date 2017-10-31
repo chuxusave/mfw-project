@@ -1,0 +1,314 @@
+.mfw-aside {
+    float: left;
+    width: 260px;
+}
+
+.mfw-aside .da-banner {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.mfw-aside .da-banner>img {
+    display: inline-block;
+    width: 22px;
+    height: 12px;
+    position: absolute;
+    bottom: 7px;
+    left: 4px;
+}
+
+.mfw-aside .asidebox {
+    margin-bottom: 30px;
+    word-wrap: break-word;
+}
+
+.mfw-aside .asidebox .asidebox-hd {
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 12px;
+}
+
+.mfw-aside .asidebox .asidebox-hd .hd-title {
+    float: left;
+    font-size: 18px;
+    line-height: 35px;
+    color: #333;
+    font-weight: normal;
+}
+
+.mfw-aside .asidebox .asidebox-hd .hd-right {
+    float: right;
+    color: #999;
+    line-height: 35px;
+    font-size: 12px;
+}
+
+.mfw-aside .asidebox .asidebox-hd .hd-right:hover {
+    text-decoration: underline;
+}
+
+.mfw-aside .box-traveller .asidebox-bd {
+    width: 260px;
+    height: 246px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mfw-aside .asidebox .asidebox-bd .slide-ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500%;
+    height: 246px;
+    transition: all 0.3s ease-in-out;
+}
+
+.mfw-aside .asidebox .asidebox-bd .slide-ul li {
+    float: left;
+    width: 20%;
+}
+
+.mfw-aside .asidebox .asidebox-bd .slide-ul li .image {
+    height: 140px;
+    overflow: hidden;
+}
+
+.mfw-aside .asidebox .asidebox-bd .slide-ul li h3 {
+    margin: 10px 0 5px;
+    width: 260px;
+    height: 26px;
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+    line-height: 26px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mfw-aside .asidebox .asidebox-bd .slide-ul li h3 a:hover{
+    text-decoration: underline;
+    color: #ff9d00;
+}
+
+.mfw-aside .asidebox .asidebox-bd .slide-ul li p {
+    height: 60px;
+    line-height: 20px;
+    font-size: 14px;
+    overflow: hidden;
+    word-wrap: break-word;
+    color: #666;    
+}
+
+.mfw-aside .asidebox .asidebox-bd .slide-ol {
+    position: absolute;
+    right: 7px;
+    top: 120px;
+}
+
+.mfw-aside .asidebox .asidebox-bd .slide-ol>li {
+    background-color: white;
+    display: inline-block;
+    margin-left: 3px;
+    width: 15px;
+    height: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.mfw-aside .asidebox .asidebox-bd .slide-ol li:hover {
+    background-color: #ff9d00;
+}
+
+.mfw-aside .asidebox .asidebox-bd .strategy-item {
+    margin-bottom: 15px;
+}
+
+.mfw-aside .asidebox .asidebox-bd .strategy-item .img {
+    position: relative;
+    height: 140px;
+    margin-bottom: 10px;
+}
+
+.mfw-aside .asidebox .asidebox-bd .strategy-item .img .mark {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    padding: 0 6px;
+    color: #fff;
+    line-height: 24px;
+    background-color: #ff6262;
+    font-size: 12px;
+}
+
+.mfw-aside .asidebox .asidebox-bd .strategy-item .img .mark:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -5px;
+    border-top: 12px solid #ff6262;
+    border-bottom: 12px solid #ff6262;
+    border-right: 5px dashed transparent;
+}
+
+.mfw-aside .asidebox .asidebox-bd .strategy-item h3 {
+    font-weight: normal;
+    margin: 10px 0 5px;
+    width: 260px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mfw-aside .asidebox .asidebox-bd .strategy-item h3:hover {
+    color: #ff9d00;
+    text-decoration: underline;
+}
+
+.box-strategy .asidebox-bd ul {
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.box-strategy .asidebox-bd ul li {
+    width: 260px;
+    height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.box-strategy .asidebox-bd ul li a {
+    color:#ff9d00;
+}
+
+.box-strategy .asidebox-bd ul li a:hover {
+    text-decoration: underline;
+}
+
+.box-activity .hd-right span{
+    margin: 0 5px;
+}
+
+.mfw-aside .box-activity .asidebox-hd .hd-right:hover {
+    text-decoration: none;
+}
+
+.mfw-aside .box-activity .hd-right a:hover {
+    text-decoration: underline;
+}
+
+.box-activity .h390 {
+    position: relative;
+    height: 390px;
+    font-size: 12px;
+}
+
+.box-activity .asidebox-bd {
+    max-height: 390px;
+     overflow: hidden;
+    position: relative;
+    word-wrap: break-word;
+    scroll-behavior: auto;
+}
+
+.box-activity .asidebox-bd .act-item {
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px;
+    height: 50px;
+    color: #666;
+}
+
+.box-activity .asidebox-bd .act-item:hover {
+    background-color: rgb(0,0,0,0.5)
+}
+
+.box-activity .asidebox-bd .act-item img {
+    float: left;
+    margin-right: 8px;
+    border: 0;
+    vertical-align: middle;
+}
+
+.box-activity .asidebox-bd .act-item strong {
+    font-size: 14px;
+    font-weight: normal;
+    color: #ff9d00;
+    width: 186px;
+    line-height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-hr ul {
+    margin-top: 10px;
+}
+
+.box-hr ul li {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.box-hr ul li a {
+    display: block;
+    color: #666;
+}
+
+.box-hr ul li:hover a{ 
+    color: #ff9d00;
+}
+
+.box-hr ul li:hover span {
+    color: #ff9d00;
+}
+
+.box-hr ul li a span {
+    float: right;
+    font-size: 12px;
+    color: #999;
+}
+
+.box-hr ul li i {
+    margin-left: 6px;
+    font-size: 10px;
+    font-style: normal;
+    color: #d0122b;
+    background: url("../img/hr-sprite.png") no-repeat 0 -27px;
+    padding-left: 8px;
+}
+
+.box-news li {
+    font-size: 12px;
+    height: 30px;
+    width: 260px;
+    line-height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.box-news li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+

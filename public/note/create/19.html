@@ -1,0 +1,211 @@
+<html lang="en"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="UTF-8">
+    <title>添加文字 - 写游记</title>
+    <link rel="shortcut icon" href="../../img/bitbug_favicon.ico">
+    <link href="../../style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/resize.css">
+    <link rel="stylesheet" href="../style/modify.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../../js/jquery-slimScroll.js"></script>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/angular-cookies.min.js"></script>
+    <!-- <script src="../js/modify.js"></script> -->
+
+
+</head>
+
+<body ng-app="app" ng-controller="c" class="ng-scope">
+    <!-- 头部开始 -->
+    <div class="mfw-header">
+        <div class="header-wrap">
+            <!-- logo -->
+            <div class="header-logo fl">
+                <a class="mfw-logo" href="mfw-logo" title="马蜂窝自由行"></a>
+            </div>
+            <!-- 导航 -->
+            <ul class="header-nav fl">
+                <li class="fl"><a href="../../index.html">首页</a></li>
+                <li class="fl"><a href="../../tpl/mdd.html" title="目的地">目的地</a>
+                    <p class="bg-line"></p>
+                </li>
+                <li class="fl"><a href="" title="旅游攻略">旅游攻略</a><span class="bg-line"></span></li>
+                <li class="fl sales">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="自由行商城">
+                                <span>自由行商城<i class="icon-down"></i></span>
+                            </a>
+                    <div class="dropdown-menu dropdown-sales">
+                        <ul>
+                            <li><a target="_blank" href="">机票＋酒店<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="">跟团游</a></li>
+                            <li><a target="_blank" href="">当地游</a></li>
+                            <li><a target="_blank" href="">国内机票<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="">签证</a></li>
+                            <li><a target="_blank" href="">国际租车</a></li>
+                            <li><a target="_blank" href="">保险</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="酒店">酒店</a><span class="bg-line"></span></li>
+                <li class="fl community">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="社区">
+                            <span>社区<i class="icon-down"></i></span>
+                        </a>
+                    <div class="dropdown-menu dropdown-community">
+                        <ul class="nav-list fl">
+                            <li class="fc-orange"><a target="_blank" href="" title="问答">问答<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝周边">蚂蜂窝周边<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="" title="蜂蜜兑换">蜂蜜兑换</a></li>
+                            <li class="h"><a target="_blank" href="" title="结伴">结伴</a></li>
+                        </ul>
+                        <ul class="nav-list-sub fl">
+                            <li><a target="_blank" href="" title="小组论坛">小组论坛</a></li>
+                            <li><a target="_blank" href="" title="分舵同城">分舵同城</a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝拍卖行">蚂蜂窝拍卖行</a></li>
+                            <li><a target="_blank" href="" title="蜂首聚乐部">蜂首聚乐部</a></li>
+                            <li><a target="_blank" href="" title="照片PK">照片PK</a></li>
+                            <li><a target="_blank" href="" title="真人兽">真人兽</a></li>
+                            <li><a target="_blank" href="" title="道具商店">道具商店</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="APP">APP</a><span class="bg-line"></span></li>
+            </ul>
+            <!-- 未登录时导航栏右侧 -->
+            <div class="login-out fr ng-hide" ng-show="false">
+                <a class="weibo-login" href="" title="微博登录"></a>
+                <a class="qq-login" href="" title="QQ登录"></a>
+                <a class="weixin-login" href="" title="微信登录"></a>
+                <a class="login" href="tpl/login.html" title="登录蚂蜂窝">登录</a>
+                <span>|</span>
+                <a class="signin" href="tpl/register.html" title="注册帐号">注册</a>
+            </div>
+            <!-- 登录时导航栏右侧 -->
+            <div class="login-info fr" ng-hide="false">
+                <div class="header-daka fl">
+                    <a class="header-daka-btn text-center">打卡</a>
+                </div>
+                <div class="header-msg fl">
+                    <a><i class="icon-msg"></i>消息
+                        <i class="icon-down"></i></a>
+                    <div class="dropdown-menu dropdown-msg">
+                        <ul>
+                            <li class="text-left"><a target="_blank" href="" title="私信">私信</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="文章消息">文章消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="小组消息">小组消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="系统通知">系统通知</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="问答消息">问答消息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-user fl">
+                    <a href="">
+                        <div class="user-image">
+                            <img src="../../img/user-img.jpeg">
+                            <i class="icon-down"></i>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-user">
+                        <ul>
+                            <li class="text-left"><b class="i1"></b><a target="_blank" href="" title="我的马蜂窝">我的马蜂窝</a></li>
+                            <li class="text-left"><b class="i2"></b><a target="_blank" href="" title="写游记">写游记</a></li>
+                            <li class="text-left"><b class="i3"></b><a target="_blank" href="" title="预约游记">预约游记</a></li>
+                            <li class="text-left"><b class="i4"></b><a target="_blank" href="" title="我的足迹">我的足迹</a></li>
+                            <li class="text-left"><b class="i5"></b><a target="_blank" href="" title="我的问答">我的问答</a></li>
+                            <li class="text-left"><b class="i6"></b><a target="_blank" href="" title="我的好友">我的好友</a></li>
+                            <li class="text-left"><b class="i7"></b><a target="_blank" href="" title="我的收藏">我的收藏</a></li>
+                            <li class="text-left"><b class="i8"></b><a target="_blank" href="" title="我的路线">我的路线</a></li>
+                            <li class="text-left"><b class="i9"></b><a target="_blank" href="" title="我的订单">我的订单</a></li>
+                            <li class="text-left"><b class="i10"></b><a target="_blank" href="" title="我的优惠券">我的优惠券</a></li>
+                            <li class="text-left"><b class="i11"></b><a target="_blank" href="" title="设置">设置</a></li>
+                            <li class="text-left"><b class="i12"></b><a target="_blank" href="../../index.html" title="退出">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow">
+        </div>
+    </div>
+    <!-- 头部结束 -->
+    <!-- 游记标题及头图 -->
+    <div class="pagelet-block">
+        <div class="set-index">
+            <div class="set-bg"><img src="../img/user_imgs/SafsajRLwvjub7M0SVf1pF0x.jpeg"></div>
+            <div class="set-page" ng-show="showall">
+                <label for="file1"><span class="set-add"></span></label>
+                <input id="file1" class="choose-file" type="file">
+                <h2>设置游记头图</h2>
+                <p>图片建议选择尺寸大于1680px的高清大图，如相机原图</p>
+            </div>
+            <div class="set-title" ng-show="showall">
+                <input ng-model="noteTitle" type="text" maxlength="48" placeholder="填写游记标题" class="ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched">
+            </div>
+            <div class="showtitle ng-binding ng-hide" ng-hide="showall">一如梦中清晰的蓝•牵手静享甜蜜幽静 马尔代夫·阿玛瑞岛</div>
+        </div>
+    </div>
+    <div class="container clear">
+        <div class="content">
+            <div class="content-box">
+                <div class="textarea_placeholder">
+                    <div class="textarea" contenteditable="true"><p class="_j_note_content _j_seqitem" data-seq="215619798" style="margin-bottom: 20px; word-wrap: break-word; line-height: 28px; text-align: justify; word-break: break-all; font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti;">&nbsp;人生就是一场旅行，尽情欢乐的童年，苦苦寒窗读书，继而开始工作，24年，度过了懵懂年少，走过了无悔青春。从18岁开始，唯一不想停下的就是旅行的脚步。在大学期间清闲的假期时光里，一定按捺不住自己想要出去走走的心，慢慢的，越发的爱上了旅行。</p><p class="_j_note_content _j_seqitem" data-seq="175582802" style="margin-bottom: 20px; word-wrap: break-word; line-height: 28px; text-align: justify; word-break: break-all; font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10101.html" class="link _j_keyword_mdd" data-kw="马尔代夫" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142);">马尔代夫</a>是我憧憬已久的一个地方，那里的沙白，水清，天蓝，是一个和任何国家、城市都不一样的地方。它没有<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10168.html" class="link _j_keyword_mdd" data-kw="希腊" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142);">希腊</a><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14430.html" class="link _j_keyword_mdd" data-kw="地中海" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142);">地中海</a>的建筑风格，没有<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/12700.html" class="link _j_keyword_mdd" data-kw="西藏" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142);">西藏</a>淳朴浓重的民族风，没有<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14383.html" class="link _j_keyword_mdd" data-kw="欧洲" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142);">欧洲</a>恢弘浪漫的城市，但它确是最令人向往的。它远离尘嚣远离俗世，只有一座座小小的岛屿，只有椰林树影，只有蓝色的世界，只能听见亲爱的人的耳畔低语，真的如天堂一般的地方，它无疑是最浪漫的一段旅程，没有之一。语言无法描述她的美，图片也不能完全描绘她的景色，唯有瞳孔里映着的，是马代最真实的景色。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最初知道马代是因为它是久负盛名的蜜月圣地，而真正爱上它，是从蚂蜂窝游记的一张照片开始，由此，坚定了我的心，我要亲自去感受马代的美好。有机会一定要带上你最爱的人，携手你最亲的家人，远离城市的生活与工作，共赴这惬意慵懒的时光，这将是最美的一段回忆。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10月26日婚礼，准备婚礼后马上出发蜜月去，大概从3月份就开始考虑去哪旅行，<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/14383.html" class="link _j_keyword_mdd" data-kw="欧洲" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142);">欧洲</a>、<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10168.html" class="link _j_keyword_mdd" data-kw="希腊" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142);">希腊</a>、马代，因为都很喜欢挣扎了很久，最后还是坚定了马代之行，于是5月开始选岛，空闲翻翻游记，希望找到自己心仪的一片净土。话说选岛真是一个让人纠结的事情，后面会有详细介绍，我前前后后询问了7个岛，最后决定，就去阿玛瑞！</p><p class="_j_note_content _j_seqitem" data-seq="175582802" style="margin-bottom: 20px; word-wrap: break-word; line-height: 28px; text-align: justify; word-break: break-all; font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti;"><br></p><img class="img-add" src="../img/user_imgs/nwsZe15rLulm6Gkxlfdfj1bX.jpeg"><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp;马代整个国家由26组自然环礁、1192个珊瑚岛组成，其中199个岛屿有人居住，991个荒岛，岛屿平均面积为1-2平方公里，地势低平，平均海拔1.2米。</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10101.html" class="link _j_keyword_mdd" data-kw="马尔代夫" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">马尔代夫</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">具有明显的热带雨林气候特征，无四季之分，全年25~30摄氏度，分旱季和雨季，旱季，主要在一月到四月之间；雨季，主要在五月至十二月。该国虽然国土偏小，但景色奇美，</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10101.html" class="link _j_keyword_mdd" data-kw="马尔代夫" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">马尔代夫</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">亦被誉为“上帝抛洒人间的项链”，“</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10182.html" class="link _j_keyword_mdd" data-kw="印度" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">印度</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">洋上人间最后的乐园”。</span><br></div><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br></span></div><img class="img-add" src="../img/user_imgs/qkDNYiLCJuFj2dv363DfqZiA.jpeg"><div><br><img class="img-add" src="../img/user_imgs/4AJHhHxL1Ut7f5A4ZEeu4iub.jpeg"></div><div><br><img class="img-add" src="../img/user_imgs/LMBbj3myU_n74Hsl0GamY62_.jpeg"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-box">
+                <input id="file2" class="choose-file1" type="file">
+                <label for="file2">
+                    <div class="sidebar-item add-photo" ng-show="showall">
+                        <span class="add-btn">
+                            <i class="icon-photo"></i>插入图片
+                        </span>
+                    </div>
+                </label>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-emotion"></i>插入表情
+                    </span>
+                </div>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-video"></i>插入视频
+                    </span>
+                </div>
+
+                <div class="sidebar-item" ng-click="showPanel()" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-title"></i>插入段落标签
+                    </span>
+                    <div class="add-panel ng-hide" ng-show="show">
+                        <div class="inner">
+                            <div class="a-form clear">
+                                <div class="a-inpwrap clear">
+                                    <input ng-model="aInput" type="text" class="a-input ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" placeholder="请输入段落名称" maxlength="20">
+                                    <span ng-click="addPanel($event)" class="a-btn">确定</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input id="file3" class="choose-file2" type="file">
+                <label for="file3">
+                    <div class="sidebar-item add-audio" ng-click="showAudio"><span class="music"><audio loop="loop" autoplay="autoplay" controls="controls" src="../img/user_imgs/NTlEiVXoRKkNWj4BNKoDnsQC.mp3"></audio>周杰伦 - 告白气球</span></div>
+                </label>
+            </div>
+        </div>
+        <div class="action-ft" ng-show="showall">
+            <div class="action-wrap">
+                <div class="item-btn fr text-right">
+                    <a class="btn-publish" ng-click="publish()">发表游记</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

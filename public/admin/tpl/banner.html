@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>马蜂窝 - 后台管理系统</title>
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../style/ngTable.css">
+    <script src="../js/lodash.min.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../js/ng-table.min.js"></script>
+    <link rel="stylesheet" href="../style/table.css">
+    <script src="../js/banner.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" class="container-fluid">
+        <div class="row">
+            <div class="col-md-9" ng-controller="demoController as demo">
+                <h3>banner位管理</h3>
+                <p>*注意：1.添加图片地址时请严格按照图片路径填写（img/）。2.本表格不能更改序号，序号与数据库一致，无需填写，自动生成。3.已删除的数据不能恢复，请谨慎删除 </p>
+                <button class="btn btn-default" ng-click="demo.add()">
+                        <span class="glyphicon glyphicon-plus"></span>添加数据
+                </button>
+                <table ng-table="demo.tableParams" class="table table-bordered table-hover table-condensed editable-table demoTable" ng-form="demo.tableForm"
+                    disable-filter="demo.isAdding" demo-tracked-table="demo.tableTracker">
+                    <colgroup>
+                        <col width="8%" />
+                        <col width="20%" />
+                        <col width="20%" />
+                        <col width="10%" />
+                        <col width="12%" />
+                        <col width="10%" />
+                        <col width="10%" />
+                        <col width="10%" />
+                    </colgroup>
+                    <tr ng-repeat="row in $data" ng-form="rowForm" demo-tracked-table-row="row">
+                        <td title="'序号'" filter="{id: 'number'}" sortable="'id'" ng-switch="row.isEditing" ng-class="id.$dirty ? 'bg-warning' : ''"
+                            ng-form="id" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.id}}</span>
+                            <div class="controls" ng-class="id.$invalid && id.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="number" name="id" ng-model="row.id" class="editable-input form-control input-sm" disabled />
+                            </div>
+                        </td>
+                        <td title="'图片地址'" filter="{imgUrl: 'text'}" sortable="'imgUrl'" ng-switch="row.isEditing" ng-class="imgUrl.$dirty ? 'bg-warning' : ''"
+                            ng-form="imgUrl" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.imgUrl}}</span>
+                            <div class="controls" ng-class="imgUrl.$invalid && imgUrl.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="imgUrl" ng-model="row.imgUrl" class="editable-input form-control input-sm" required />
+                            </div>
+                        </td>
+                        <td title="'图片文字'" filter="{imgTxt: 'text'}" sortable="'imgTxt'" ng-switch="row.isEditing" ng-class="imgTxt.$dirty ? 'bg-warning' : ''"
+                            ng-form="imgTxt" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.imgTxt}}</span>
+                            <div class="controls" ng-class="imgTxt.$invalid && imgTxt.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="imgTxt" ng-model="row.imgTxt" class="editable-input form-control input-sm" required />
+                            </div>
+                        </td>
+                        <td title="'图片地点'" filter="{imgPlace: 'text'}" sortable="'imgPlace'" ng-switch="row.isEditing" ng-class="imgPlace.$dirty ? 'bg-warning' : ''"
+                            ng-form="imgPlace" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.imgPlace}}</span>
+                            <div class="controls" ng-class="imgPlace.$invalid && imgPlace.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="imgPlace" ng-model="row.imgPlace" class="editable-input form-control input-sm" required />
+                            </div>
+                        </td>
+                        <td title="'该地图片总数'" filter="{imgNum: 'number'}" sortable="'imgNum'" ng-switch="row.isEditing" ng-class="imgNum.$dirty ? 'bg-warning' : ''"
+                            ng-form="imgNum" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.imgNum}}</span>
+                            <div class="controls" ng-class="imgNum.$invalid && imgNum.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="number" name="imgNum" ng-model="row.imgNum" class="editable-input form-control input-sm" required />
+                            </div>
+                        </td>
+                        <td title="'图片作者'" filter="{imgFrom: 'text'}" sortable="'imgFrom'" ng-switch="row.isEditing" ng-class="imgFrom.$dirty ? 'bg-warning' : ''"
+                            ng-form="title" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.imgFrom}}</span>
+                            <div class="controls" ng-class="imgFrom.$invalid && imgFrom.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="text" name="imgFrom" ng-model="row.imgFrom" class="editable-input form-control input-sm" required/>
+                            </div>
+                        </td>
+                        <td title="'展示日期'" filter="{imgDate: 'number'}" sortable="'imgDate'" ng-switch="row.isEditing" ng-class="imgDate.$dirty ? 'bg-warning' : ''"
+                            ng-form="imgDate" demo-tracked-table-cell>
+                            <span ng-switch-default class="editable-text">{{row.imgDate}}</span>
+                            <div class="controls" ng-class="imgDate.$invalid && imgDate.$dirty ? 'has-error' : ''" ng-switch-when="true">
+                                <input type="number" name="imgDate" ng-model="row.imgDate" class="editable-input form-control input-sm" required />
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" ng-click="demo.save(row, rowForm)" ng-if="row.isEditing" ng-disabled="rowForm.$pristine || rowForm.$invalid"><span class="glyphicon glyphicon-ok"></span></button>
+                            <button class="btn btn-default btn-sm" ng-click="demo.cancel(row, rowForm)" ng-if="row.isEditing"><span class="glyphicon glyphicon-remove"></span></button>
+                            <button class="btn btn-default btn-sm" ng-click="row.isEditing = true" ng-if="!row.isEditing"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <button class="btn btn-danger btn-sm" ng-click="demo.del(row)" ng-if="!row.isEditing"><span class="glyphicon glyphicon-trash"></span></button>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

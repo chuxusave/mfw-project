@@ -1,0 +1,211 @@
+<html lang="en"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="UTF-8">
+    <title>添加文字 - 写游记</title>
+    <link rel="shortcut icon" href="../../img/bitbug_favicon.ico">
+    <link href="../../style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/resize.css">
+    <link rel="stylesheet" href="../style/modify.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../../js/jquery-slimScroll.js"></script>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/angular-cookies.min.js"></script>
+    <!-- <script src="../js/modify.js"></script> -->
+
+
+</head>
+
+<body ng-app="app" ng-controller="c" class="ng-scope">
+    <!-- 头部开始 -->
+    <div class="mfw-header">
+        <div class="header-wrap">
+            <!-- logo -->
+            <div class="header-logo fl">
+                <a class="mfw-logo" href="mfw-logo" title="马蜂窝自由行"></a>
+            </div>
+            <!-- 导航 -->
+            <ul class="header-nav fl">
+                <li class="fl"><a href="../../index.html">首页</a></li>
+                <li class="fl"><a href="../../tpl/mdd.html" title="目的地">目的地</a>
+                    <p class="bg-line"></p>
+                </li>
+                <li class="fl"><a href="" title="旅游攻略">旅游攻略</a><span class="bg-line"></span></li>
+                <li class="fl sales">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="自由行商城">
+                                <span>自由行商城<i class="icon-down"></i></span>
+                            </a>
+                    <div class="dropdown-menu dropdown-sales">
+                        <ul>
+                            <li><a target="_blank" href="">机票＋酒店<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="">跟团游</a></li>
+                            <li><a target="_blank" href="">当地游</a></li>
+                            <li><a target="_blank" href="">国内机票<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="">签证</a></li>
+                            <li><a target="_blank" href="">国际租车</a></li>
+                            <li><a target="_blank" href="">保险</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="酒店">酒店</a><span class="bg-line"></span></li>
+                <li class="fl community">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="社区">
+                            <span>社区<i class="icon-down"></i></span>
+                        </a>
+                    <div class="dropdown-menu dropdown-community">
+                        <ul class="nav-list fl">
+                            <li class="fc-orange"><a target="_blank" href="" title="问答">问答<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝周边">蚂蜂窝周边<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="" title="蜂蜜兑换">蜂蜜兑换</a></li>
+                            <li class="h"><a target="_blank" href="" title="结伴">结伴</a></li>
+                        </ul>
+                        <ul class="nav-list-sub fl">
+                            <li><a target="_blank" href="" title="小组论坛">小组论坛</a></li>
+                            <li><a target="_blank" href="" title="分舵同城">分舵同城</a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝拍卖行">蚂蜂窝拍卖行</a></li>
+                            <li><a target="_blank" href="" title="蜂首聚乐部">蜂首聚乐部</a></li>
+                            <li><a target="_blank" href="" title="照片PK">照片PK</a></li>
+                            <li><a target="_blank" href="" title="真人兽">真人兽</a></li>
+                            <li><a target="_blank" href="" title="道具商店">道具商店</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="APP">APP</a><span class="bg-line"></span></li>
+            </ul>
+            <!-- 未登录时导航栏右侧 -->
+            <div class="login-out fr ng-hide" ng-show="false">
+                <a class="weibo-login" href="" title="微博登录"></a>
+                <a class="qq-login" href="" title="QQ登录"></a>
+                <a class="weixin-login" href="" title="微信登录"></a>
+                <a class="login" href="tpl/login.html" title="登录蚂蜂窝">登录</a>
+                <span>|</span>
+                <a class="signin" href="tpl/register.html" title="注册帐号">注册</a>
+            </div>
+            <!-- 登录时导航栏右侧 -->
+            <div class="login-info fr" ng-hide="false">
+                <div class="header-daka fl">
+                    <a class="header-daka-btn text-center">打卡</a>
+                </div>
+                <div class="header-msg fl">
+                    <a><i class="icon-msg"></i>消息
+                        <i class="icon-down"></i></a>
+                    <div class="dropdown-menu dropdown-msg">
+                        <ul>
+                            <li class="text-left"><a target="_blank" href="" title="私信">私信</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="文章消息">文章消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="小组消息">小组消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="系统通知">系统通知</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="问答消息">问答消息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-user fl">
+                    <a href="">
+                        <div class="user-image">
+                            <img src="../../img/user-img.jpeg">
+                            <i class="icon-down"></i>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-user">
+                        <ul>
+                            <li class="text-left"><b class="i1"></b><a target="_blank" href="" title="我的马蜂窝">我的马蜂窝</a></li>
+                            <li class="text-left"><b class="i2"></b><a target="_blank" href="" title="写游记">写游记</a></li>
+                            <li class="text-left"><b class="i3"></b><a target="_blank" href="" title="预约游记">预约游记</a></li>
+                            <li class="text-left"><b class="i4"></b><a target="_blank" href="" title="我的足迹">我的足迹</a></li>
+                            <li class="text-left"><b class="i5"></b><a target="_blank" href="" title="我的问答">我的问答</a></li>
+                            <li class="text-left"><b class="i6"></b><a target="_blank" href="" title="我的好友">我的好友</a></li>
+                            <li class="text-left"><b class="i7"></b><a target="_blank" href="" title="我的收藏">我的收藏</a></li>
+                            <li class="text-left"><b class="i8"></b><a target="_blank" href="" title="我的路线">我的路线</a></li>
+                            <li class="text-left"><b class="i9"></b><a target="_blank" href="" title="我的订单">我的订单</a></li>
+                            <li class="text-left"><b class="i10"></b><a target="_blank" href="" title="我的优惠券">我的优惠券</a></li>
+                            <li class="text-left"><b class="i11"></b><a target="_blank" href="" title="设置">设置</a></li>
+                            <li class="text-left"><b class="i12"></b><a target="_blank" href="../../index.html" title="退出">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow">
+        </div>
+    </div>
+    <!-- 头部结束 -->
+    <!-- 游记标题及头图 -->
+    <div class="pagelet-block">
+        <div class="set-index">
+            <div class="set-bg"><img src="../img/user_imgs/GKgklUPjnaycIOQIksYQUtSz.jpeg"></div>
+            <div class="set-page" ng-show="showall">
+                <label for="file1"><span class="set-add"></span></label>
+                <input id="file1" class="choose-file" type="file">
+                <h2>设置游记头图</h2>
+                <p>图片建议选择尺寸大于1680px的高清大图，如相机原图</p>
+            </div>
+            <div class="set-title" ng-show="showall">
+                <input ng-model="noteTitle" type="text" maxlength="48" placeholder="填写游记标题" class="ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched">
+            </div>
+            <div class="showtitle ng-binding ng-hide" ng-hide="showall">#蜂首纪念#流连忘返——新西兰南岛11日自驾风光游</div>
+        </div>
+    </div>
+    <div class="container clear">
+        <div class="content">
+            <div class="content-box">
+                <div class="textarea_placeholder">
+                    <div class="textarea" contenteditable="true"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">不说别的，先上10张最喜欢的图~（有水印的都是我拍的，其余是父母拍的）</span><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br></span></div><img class="img-add" src="../img/user_imgs/wkjWRXim8jSEJbwpF0MxtbUO.jpeg"><div><br></div><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">机票的话，我们是从</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10684.html" class="link _j_keyword_mdd" data-kw="南京" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">南京</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">出发，飞</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10865.html" class="link _j_keyword_mdd" data-kw="奥克兰" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">奥克兰</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">，途中经过</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10189.html" class="link _j_keyword_mdd" data-kw="香港" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">香港</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">转机，大概就是15年6月订的16年2月的票，来回是9200RMB，相比一般的价格来说（1w2-1w4左右）还是提早点订比较好。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">另外由于我们行程的安排，是直奔南岛，而且不走循环，异地</span><a href="http://zuche.mafengwo.cn/jump_landing_page.php?keyword=%E8%BF%98%E8%BD%A6" class="link" data-kw="还车" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">还车</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">（</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/15920.html" class="link _j_keyword_mdd" data-kw="基督城" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">基督城</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">借，达尼丁还），所以还需要订2张</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10544.html" class="link _j_keyword_mdd" data-kw="新西兰" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">新西兰</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">国内的机票，我们直接订了新西兰航空公司的廉价机票+行李额度（因为廉价机票没有行李额度），分别是从</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10865.html" class="link _j_keyword_mdd" data-kw="奥克兰" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">奥克兰</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">直飞南岛基督城，以及回程时从达尼丁直飞奥克兰的2张机票。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">最终3人机票花费31496RMB。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10865.html" class="link _j_keyword_mdd" data-kw="奥克兰" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">奥克兰</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">机场国际航站楼和国内航站楼不在一起，中间有一个绿色步道相连，大概800米左右，也可以等一个免费的穿梭巴士，是上白下绿颜色的大巴。具体可以去奥克兰机场官网查（http://www.aucklandairport.co.nz/chs/）。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">这里说一下，</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10865.html" class="link _j_keyword_mdd" data-kw="奥克兰" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">奥克兰</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">机场值机的时候都是自动机，根据事先电子客票上的6位英文预定码，就可以取票，并且还可以在那里买行李额，不过推荐在新航官网上买好，比较便宜。</span><br></div><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br></span></div><img class="img-add" src="../img/user_imgs/M3pOCHsaclX9Gu1XM-d9Yxxb.jpeg"><div><br></div><div><br></div><img class="img-add" src="../img/user_imgs/GhcpDZdVGIKo3_TDCzDSyBF6.jpeg"><div><br></div><div><br><img class="img-add" src="../img/user_imgs/PBZ1K6iBCziLzgfiY1QxGAFO.jpeg"></div><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">我们所有住宿差不多在行程和项目确定好后就开始着手预定的，差不多在15年8月初，当然也考虑了一些更改的余地。是在AGODA预定的，个人还是对AGODA比较信赖的。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">我们除了</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10885.html" class="link _j_keyword_mdd" data-kw="皇后镇" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">皇后镇</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">和达尼丁住2天以外，其余地方都是住1天，所有旅店都是MOTEL，基本原则就是AGODA评价8.5分以上，价格最低的有WIFI的汽车旅馆。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">我们最初选择住宿地址的原则是按照目的地来找的，然而到了</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10544.html" class="link _j_keyword_mdd" data-kw="新西兰" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">新西兰</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">才发现，实际上</span><a href="http://zuche.mafengwo.cn/jump_landing_page.php?keyword=%E8%87%AA%E9%A9%BE" class="link" data-kw="自驾" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">自驾</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">的话住不住城镇无所谓，只要是途径的乡村小旅馆都可以考虑，住宿条件是有保障的。新西兰地图上标注的有名字的地点，都有提供食宿的。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">当然，有的地方还是需要谨慎一点，</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/63538.html" class="link _j_keyword_mdd" data-kw="比如" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">比如</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">一开始预计好到蒂卡波湖的牧羊人教堂拍星星的，结果为了省钱订到了46km之外的</span><a href="http://www.mafengwo.cn/poi/5503332.html" class="link _j_keyword_poi" data-poi_id="5503332" data-cs-p="ginfo_txt_poi" data-kw="特威泽尔" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">特威泽尔</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">（虽然后来发现那里也非常棒），不过就没有到牧羊人教堂拍到星星，毕竟40多km的夜路并不好走。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">我们订的旅馆全是3人住的，当然有时候老板会给你4人甚至5人住的房间。在</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10544.html" class="link _j_keyword_mdd" data-kw="新西兰" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">新西兰</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">每晚的花费大约在500-700（3人）左右，旅店设施很好，基本都配有厨房餐具等，喜欢自己烧饭且有时间的不要错过。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">最终住宿花费6723RMB，包括了</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10189.html" class="link _j_keyword_mdd" data-kw="香港" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">香港</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">1400多的一晚。</span><br></div><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br></span></div><img class="img-add" src="../img/user_imgs/hlWasHAYa8JB0znWPUkBoWx8.jpeg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-box">
+                <input id="file2" class="choose-file1" type="file">
+                <label for="file2">
+                    <div class="sidebar-item add-photo" ng-show="showall">
+                        <span class="add-btn">
+                            <i class="icon-photo"></i>插入图片
+                        </span>
+                    </div>
+                </label>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-emotion"></i>插入表情
+                    </span>
+                </div>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-video"></i>插入视频
+                    </span>
+                </div>
+
+                <div class="sidebar-item" ng-click="showPanel()" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-title"></i>插入段落标签
+                    </span>
+                    <div class="add-panel ng-hide" ng-show="show">
+                        <div class="inner">
+                            <div class="a-form clear">
+                                <div class="a-inpwrap clear">
+                                    <input ng-model="aInput" type="text" class="a-input ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" placeholder="请输入段落名称" maxlength="20">
+                                    <span ng-click="addPanel($event)" class="a-btn">确定</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input id="file3" class="choose-file2" type="file">
+                <label for="file3">
+                    <div class="sidebar-item add-audio" ng-click="showAudio"><span class="music"><audio loop="loop" autoplay="autoplay" controls="controls" src="../img/user_imgs/NioLprMuPIbeczd72CDIUbxW.mp3"></audio>群星 - 新西兰</span></div>
+                </label>
+            </div>
+        </div>
+        <div class="action-ft" ng-show="showall">
+            <div class="action-wrap">
+                <div class="item-btn fr text-right">
+                    <a class="btn-publish" ng-click="publish()">发表游记</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

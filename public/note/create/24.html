@@ -1,0 +1,211 @@
+<html lang="en"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="UTF-8">
+    <title>添加文字 - 写游记</title>
+    <link rel="shortcut icon" href="../../img/bitbug_favicon.ico">
+    <link href="../../style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/resize.css">
+    <link rel="stylesheet" href="../style/modify.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../../js/jquery-slimScroll.js"></script>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/angular-cookies.min.js"></script>
+    <!-- <script src="../js/modify.js"></script> -->
+
+
+</head>
+
+<body ng-app="app" ng-controller="c" class="ng-scope">
+    <!-- 头部开始 -->
+    <div class="mfw-header">
+        <div class="header-wrap">
+            <!-- logo -->
+            <div class="header-logo fl">
+                <a class="mfw-logo" href="mfw-logo" title="马蜂窝自由行"></a>
+            </div>
+            <!-- 导航 -->
+            <ul class="header-nav fl">
+                <li class="fl"><a href="../../index.html">首页</a></li>
+                <li class="fl"><a href="../../tpl/mdd.html" title="目的地">目的地</a>
+                    <p class="bg-line"></p>
+                </li>
+                <li class="fl"><a href="" title="旅游攻略">旅游攻略</a><span class="bg-line"></span></li>
+                <li class="fl sales">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="自由行商城">
+                                <span>自由行商城<i class="icon-down"></i></span>
+                            </a>
+                    <div class="dropdown-menu dropdown-sales">
+                        <ul>
+                            <li><a target="_blank" href="">机票＋酒店<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="">跟团游</a></li>
+                            <li><a target="_blank" href="">当地游</a></li>
+                            <li><a target="_blank" href="">国内机票<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="">签证</a></li>
+                            <li><a target="_blank" href="">国际租车</a></li>
+                            <li><a target="_blank" href="">保险</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="酒店">酒店</a><span class="bg-line"></span></li>
+                <li class="fl community">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="社区">
+                            <span>社区<i class="icon-down"></i></span>
+                        </a>
+                    <div class="dropdown-menu dropdown-community">
+                        <ul class="nav-list fl">
+                            <li class="fc-orange"><a target="_blank" href="" title="问答">问答<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝周边">蚂蜂窝周边<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="" title="蜂蜜兑换">蜂蜜兑换</a></li>
+                            <li class="h"><a target="_blank" href="" title="结伴">结伴</a></li>
+                        </ul>
+                        <ul class="nav-list-sub fl">
+                            <li><a target="_blank" href="" title="小组论坛">小组论坛</a></li>
+                            <li><a target="_blank" href="" title="分舵同城">分舵同城</a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝拍卖行">蚂蜂窝拍卖行</a></li>
+                            <li><a target="_blank" href="" title="蜂首聚乐部">蜂首聚乐部</a></li>
+                            <li><a target="_blank" href="" title="照片PK">照片PK</a></li>
+                            <li><a target="_blank" href="" title="真人兽">真人兽</a></li>
+                            <li><a target="_blank" href="" title="道具商店">道具商店</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="APP">APP</a><span class="bg-line"></span></li>
+            </ul>
+            <!-- 未登录时导航栏右侧 -->
+            <div class="login-out fr ng-hide" ng-show="false">
+                <a class="weibo-login" href="" title="微博登录"></a>
+                <a class="qq-login" href="" title="QQ登录"></a>
+                <a class="weixin-login" href="" title="微信登录"></a>
+                <a class="login" href="tpl/login.html" title="登录蚂蜂窝">登录</a>
+                <span>|</span>
+                <a class="signin" href="tpl/register.html" title="注册帐号">注册</a>
+            </div>
+            <!-- 登录时导航栏右侧 -->
+            <div class="login-info fr" ng-hide="false">
+                <div class="header-daka fl">
+                    <a class="header-daka-btn text-center">打卡</a>
+                </div>
+                <div class="header-msg fl">
+                    <a><i class="icon-msg"></i>消息
+                        <i class="icon-down"></i></a>
+                    <div class="dropdown-menu dropdown-msg">
+                        <ul>
+                            <li class="text-left"><a target="_blank" href="" title="私信">私信</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="文章消息">文章消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="小组消息">小组消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="系统通知">系统通知</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="问答消息">问答消息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-user fl">
+                    <a href="">
+                        <div class="user-image">
+                            <img src="../../img/user-img.jpeg">
+                            <i class="icon-down"></i>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-user">
+                        <ul>
+                            <li class="text-left"><b class="i1"></b><a target="_blank" href="" title="我的马蜂窝">我的马蜂窝</a></li>
+                            <li class="text-left"><b class="i2"></b><a target="_blank" href="" title="写游记">写游记</a></li>
+                            <li class="text-left"><b class="i3"></b><a target="_blank" href="" title="预约游记">预约游记</a></li>
+                            <li class="text-left"><b class="i4"></b><a target="_blank" href="" title="我的足迹">我的足迹</a></li>
+                            <li class="text-left"><b class="i5"></b><a target="_blank" href="" title="我的问答">我的问答</a></li>
+                            <li class="text-left"><b class="i6"></b><a target="_blank" href="" title="我的好友">我的好友</a></li>
+                            <li class="text-left"><b class="i7"></b><a target="_blank" href="" title="我的收藏">我的收藏</a></li>
+                            <li class="text-left"><b class="i8"></b><a target="_blank" href="" title="我的路线">我的路线</a></li>
+                            <li class="text-left"><b class="i9"></b><a target="_blank" href="" title="我的订单">我的订单</a></li>
+                            <li class="text-left"><b class="i10"></b><a target="_blank" href="" title="我的优惠券">我的优惠券</a></li>
+                            <li class="text-left"><b class="i11"></b><a target="_blank" href="" title="设置">设置</a></li>
+                            <li class="text-left"><b class="i12"></b><a target="_blank" href="../../index.html" title="退出">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow">
+        </div>
+    </div>
+    <!-- 头部结束 -->
+    <!-- 游记标题及头图 -->
+    <div class="pagelet-block">
+        <div class="set-index">
+            <div class="set-bg"><img src="../img/user_imgs/5hvzR7udhaxa4CD0goy5fD8T.jpeg"></div>
+            <div class="set-page" ng-show="showall">
+                <label for="file1"><span class="set-add"></span></label>
+                <input id="file1" class="choose-file" type="file">
+                <h2>设置游记头图</h2>
+                <p>图片建议选择尺寸大于1680px的高清大图，如相机原图</p>
+            </div>
+            <div class="set-title" ng-show="showall">
+                <input ng-model="noteTitle" type="text" maxlength="48" placeholder="填写游记标题" class="ng-valid ng-valid-maxlength ng-touched ng-not-empty ng-dirty ng-valid-parse">
+            </div>
+            <div class="showtitle ng-binding ng-hide" ng-hide="showall">[独游+自拍] 荷兰,德国,奥地利,捷克 受伤21天游</div>
+        </div>
+    </div>
+    <div class="container clear">
+        <div class="content">
+            <div class="content-box">
+                <div class="textarea_placeholder">
+                    <div class="textarea" contenteditable="true"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">我本身不是爱折腾写游记的人，&nbsp;听说写一次会加深自己对旅游的记忆。想一下也是有道理的；所以我就弄一下，确实很多地方，景点你可能回来就忘了那里是那里，主要是因为我都没详细安排，每天晚上才安排第二天的目的地；回来看著实际走过的行程回忆一次，确实对本次旅游的地方内容和景点有了加深了解。所以我也不会写很多攻略呀什么，只是简单写一下而已。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">一个人旅行有段时间了，已经渐渐成为习惯，成为生活中不可缺少的一部分。可能我太需要和自己相处的时间，静静的走，慢慢的看；想停就停，想坐就坐，想吃什么就吃什么，不会被任何人或事干扰。让独处的时间也能成为有画面的记忆。</span><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br></span></div><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">本来这是一次31天的旅行，可惜在到达</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10755.html" class="link _j_keyword_mdd" data-kw="柏林" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">柏林</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">的当天，就在车站扭伤了脚，很严重那种，所以被迫要中断旅行回来。所以后面的行程就没有走完啦。也算是一种体验吧。我建议如果出什么意外，还是不要自己起来，直接打电话叫救护车说起不来。因为你起来后上医院是件很麻烦的事。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">本次我是打算坐火车走，所以我是买了&nbsp;Europe&nbsp;Pass&nbsp;全欧连续使用30天加送5天的通票，900欧；很贵，可能分开买会便宜，但我前期不想折腾行程；因为我一般都是前一天晚上才想好第二天要去那里。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">住宿我也不想经常换，换住宿会很浪费时间和辛苦；所以我的住宿方案是选定了几个中心城市，然后坐火车玩周边的地方；所以我住的地方都离火车站很近很近，都是100-400米左右的,&nbsp;定点住宿城市情况如下：(包括玩了那些周边地方）</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">5.2&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11099.html" class="link _j_keyword_mdd" data-kw="荷兰" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">荷兰</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11101.html" class="link _j_keyword_mdd" data-kw="鹿特丹" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">鹿特丹</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;5天&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;玩:&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11100.html" class="link _j_keyword_mdd" data-kw="阿姆斯特丹" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">阿姆斯特丹</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;Delft,&nbsp;Rotterdam,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/16099.html" class="link _j_keyword_mdd" data-kw="羊角村" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">羊角村</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;小孩提防</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">5.7&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10176.html" class="link _j_keyword_mdd" data-kw="德国" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">德国</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10958.html" class="link _j_keyword_mdd" data-kw="法兰克福" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">法兰克福</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;6天&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;玩:&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/15439.html" class="link _j_keyword_mdd" data-kw="海德堡" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">海德堡</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/38867.html" class="link _j_keyword_mdd" data-kw="科布伦茨" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">科布伦茨</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/16089.html" class="link _j_keyword_mdd" data-kw="纽伦堡" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">纽伦堡</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/41575.html" class="link _j_keyword_mdd" data-kw="维尔茨堡" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">维尔茨堡</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/16308.html" class="link _j_keyword_mdd" data-kw="美因茨" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">美因茨</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/17896.html" class="link _j_keyword_mdd" data-kw="威斯巴登" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">威斯巴登</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11080.html" class="link _j_keyword_mdd" data-kw="科隆" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">科隆</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/60420.html" class="link _j_keyword_mdd" data-kw="亚琛" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">亚琛</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">5.13&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11081.html" class="link _j_keyword_mdd" data-kw="慕尼黑" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">慕尼黑</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;6天&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;玩:&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/36974.html" class="link _j_keyword_mdd" data-kw="雷根斯堡" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">雷根斯堡</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/35987.html" class="link _j_keyword_mdd" data-kw="福森" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">福森</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10332.html" class="link _j_keyword_mdd" data-kw="天鹅堡" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">天鹅堡</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10175.html" class="link _j_keyword_mdd" data-kw="奥地利" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">奥地利</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11167.html" class="link _j_keyword_mdd" data-kw="萨尔茨堡" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">萨尔茨堡</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10175.html" class="link _j_keyword_mdd" data-kw="奥地利" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">奥地利</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11092.html" class="link _j_keyword_mdd" data-kw="因斯布鲁克" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">因斯布鲁克</a><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">5.19&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10174.html" class="link _j_keyword_mdd" data-kw="捷克" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">捷克</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10761.html" class="link _j_keyword_mdd" data-kw="布拉格" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">布拉格</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;5天&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;玩:&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10761.html" class="link _j_keyword_mdd" data-kw="布拉格" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">布拉格</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">,&nbsp;CK&nbsp;小镇,&nbsp;Kutna&nbsp;Hora&nbsp;(人骨教堂那个小镇)</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">5.24&nbsp;</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10755.html" class="link _j_keyword_mdd" data-kw="柏林" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">柏林</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">&nbsp;...&nbsp;</span><img src="http://images.mafengwo.net/images/i/face/daily_v2/21@2x.png" style="border: 0px; vertical-align: middle; font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify; width: 23px;"><img src="http://images.mafengwo.net/images/i/face/daily_v2/21@2x.png" style="border: 0px; vertical-align: middle; font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify; width: 23px;"><img src="http://images.mafengwo.net/images/i/face/daily_v2/21@2x.png" style="border: 0px; vertical-align: middle; font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify; width: 23px;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">....&nbsp;不必写了，因为24号一到</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10755.html" class="link _j_keyword_mdd" data-kw="柏林" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">柏林</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">就受伤，我&nbsp;26&nbsp;号已回。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">这样的安排是想自已不那么累，也可以随性点。前期工作只需要机票，车票，酒店和大约的行程就好了。不用很仔细的规划。</span><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br></span></div><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br></span></div><img class="img-add" src="../img/user_imgs/bXXFE3zy5a9wmM4SMo_Z-8ru.jpeg"><div><br><img class="img-add" src="../img/user_imgs/_Ks2Y6m1RAGCvFf3NmmZP-9H.jpeg"></div><div><br><img class="img-add" src="../img/user_imgs/jHaNqddO8NWjMlVuH676hNgL.jpeg"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-box">
+                <input id="file2" class="choose-file1" type="file">
+                <label for="file2">
+                    <div class="sidebar-item add-photo" ng-show="showall">
+                        <span class="add-btn">
+                            <i class="icon-photo"></i>插入图片
+                        </span>
+                    </div>
+                </label>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-emotion"></i>插入表情
+                    </span>
+                </div>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-video"></i>插入视频
+                    </span>
+                </div>
+
+                <div class="sidebar-item" ng-click="showPanel()" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-title"></i>插入段落标签
+                    </span>
+                    <div class="add-panel ng-hide" ng-show="show">
+                        <div class="inner">
+                            <div class="a-form clear">
+                                <div class="a-inpwrap clear">
+                                    <input ng-model="aInput" type="text" class="a-input ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" placeholder="请输入段落名称" maxlength="20">
+                                    <span ng-click="addPanel($event)" class="a-btn">确定</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input id="file3" class="choose-file2" type="file">
+                <label for="file3">
+                    <div class="sidebar-item add-audio" ng-click="showAudio"><span class="music"><audio loop="loop" autoplay="autoplay" controls="controls" src="../img/user_imgs/2okbXYnw9GDigtihtdZ95WE5.mp3"></audio>许嵩 - 河山大好</span></div>
+                </label>
+            </div>
+        </div>
+        <div class="action-ft" ng-show="showall">
+            <div class="action-wrap">
+                <div class="item-btn fr text-right">
+                    <a class="btn-publish" ng-click="publish()">发表游记</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

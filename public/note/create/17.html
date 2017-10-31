@@ -1,0 +1,211 @@
+<html lang="en"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="UTF-8">
+    <title>添加文字 - 写游记</title>
+    <link rel="shortcut icon" href="../../img/bitbug_favicon.ico">
+    <link href="../../style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/resize.css">
+    <link rel="stylesheet" href="../style/modify.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../../js/jquery-slimScroll.js"></script>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/angular-cookies.min.js"></script>
+    <!-- <script src="../js/modify.js"></script> -->
+
+
+</head>
+
+<body ng-app="app" ng-controller="c" class="ng-scope">
+    <!-- 头部开始 -->
+    <div class="mfw-header">
+        <div class="header-wrap">
+            <!-- logo -->
+            <div class="header-logo fl">
+                <a class="mfw-logo" href="mfw-logo" title="马蜂窝自由行"></a>
+            </div>
+            <!-- 导航 -->
+            <ul class="header-nav fl">
+                <li class="fl"><a href="../../index.html">首页</a></li>
+                <li class="fl"><a href="../../tpl/mdd.html" title="目的地">目的地</a>
+                    <p class="bg-line"></p>
+                </li>
+                <li class="fl"><a href="" title="旅游攻略">旅游攻略</a><span class="bg-line"></span></li>
+                <li class="fl sales">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="自由行商城">
+                                <span>自由行商城<i class="icon-down"></i></span>
+                            </a>
+                    <div class="dropdown-menu dropdown-sales">
+                        <ul>
+                            <li><a target="_blank" href="">机票＋酒店<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="">跟团游</a></li>
+                            <li><a target="_blank" href="">当地游</a></li>
+                            <li><a target="_blank" href="">国内机票<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="">签证</a></li>
+                            <li><a target="_blank" href="">国际租车</a></li>
+                            <li><a target="_blank" href="">保险</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="酒店">酒店</a><span class="bg-line"></span></li>
+                <li class="fl community">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="社区">
+                            <span>社区<i class="icon-down"></i></span>
+                        </a>
+                    <div class="dropdown-menu dropdown-community">
+                        <ul class="nav-list fl">
+                            <li class="fc-orange"><a target="_blank" href="" title="问答">问答<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝周边">蚂蜂窝周边<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="" title="蜂蜜兑换">蜂蜜兑换</a></li>
+                            <li class="h"><a target="_blank" href="" title="结伴">结伴</a></li>
+                        </ul>
+                        <ul class="nav-list-sub fl">
+                            <li><a target="_blank" href="" title="小组论坛">小组论坛</a></li>
+                            <li><a target="_blank" href="" title="分舵同城">分舵同城</a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝拍卖行">蚂蜂窝拍卖行</a></li>
+                            <li><a target="_blank" href="" title="蜂首聚乐部">蜂首聚乐部</a></li>
+                            <li><a target="_blank" href="" title="照片PK">照片PK</a></li>
+                            <li><a target="_blank" href="" title="真人兽">真人兽</a></li>
+                            <li><a target="_blank" href="" title="道具商店">道具商店</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="APP">APP</a><span class="bg-line"></span></li>
+            </ul>
+            <!-- 未登录时导航栏右侧 -->
+            <div class="login-out fr ng-hide" ng-show="false">
+                <a class="weibo-login" href="" title="微博登录"></a>
+                <a class="qq-login" href="" title="QQ登录"></a>
+                <a class="weixin-login" href="" title="微信登录"></a>
+                <a class="login" href="tpl/login.html" title="登录蚂蜂窝">登录</a>
+                <span>|</span>
+                <a class="signin" href="tpl/register.html" title="注册帐号">注册</a>
+            </div>
+            <!-- 登录时导航栏右侧 -->
+            <div class="login-info fr" ng-hide="false">
+                <div class="header-daka fl">
+                    <a class="header-daka-btn text-center">打卡</a>
+                </div>
+                <div class="header-msg fl">
+                    <a><i class="icon-msg"></i>消息
+                        <i class="icon-down"></i></a>
+                    <div class="dropdown-menu dropdown-msg">
+                        <ul>
+                            <li class="text-left"><a target="_blank" href="" title="私信">私信</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="文章消息">文章消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="小组消息">小组消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="系统通知">系统通知</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="问答消息">问答消息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-user fl">
+                    <a href="">
+                        <div class="user-image">
+                            <img src="../../img/user-img.jpeg">
+                            <i class="icon-down"></i>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-user">
+                        <ul>
+                            <li class="text-left"><b class="i1"></b><a target="_blank" href="" title="我的马蜂窝">我的马蜂窝</a></li>
+                            <li class="text-left"><b class="i2"></b><a target="_blank" href="" title="写游记">写游记</a></li>
+                            <li class="text-left"><b class="i3"></b><a target="_blank" href="" title="预约游记">预约游记</a></li>
+                            <li class="text-left"><b class="i4"></b><a target="_blank" href="" title="我的足迹">我的足迹</a></li>
+                            <li class="text-left"><b class="i5"></b><a target="_blank" href="" title="我的问答">我的问答</a></li>
+                            <li class="text-left"><b class="i6"></b><a target="_blank" href="" title="我的好友">我的好友</a></li>
+                            <li class="text-left"><b class="i7"></b><a target="_blank" href="" title="我的收藏">我的收藏</a></li>
+                            <li class="text-left"><b class="i8"></b><a target="_blank" href="" title="我的路线">我的路线</a></li>
+                            <li class="text-left"><b class="i9"></b><a target="_blank" href="" title="我的订单">我的订单</a></li>
+                            <li class="text-left"><b class="i10"></b><a target="_blank" href="" title="我的优惠券">我的优惠券</a></li>
+                            <li class="text-left"><b class="i11"></b><a target="_blank" href="" title="设置">设置</a></li>
+                            <li class="text-left"><b class="i12"></b><a target="_blank" href="../../index.html" title="退出">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow">
+        </div>
+    </div>
+    <!-- 头部结束 -->
+    <!-- 游记标题及头图 -->
+    <div class="pagelet-block">
+        <div class="set-index">
+            <div class="set-bg"><img src="../img/user_imgs/UZrUevD785WcOLnVnq4GcNT6.jpeg"></div>
+            <div class="set-page" ng-show="showall">
+                <label for="file1"><span class="set-add"></span></label>
+                <input id="file1" class="choose-file" type="file">
+                <h2>设置游记头图</h2>
+                <p>图片建议选择尺寸大于1680px的高清大图，如相机原图</p>
+            </div>
+            <div class="set-title" ng-show="showall">
+                <input ng-model="noteTitle" type="text" maxlength="48" placeholder="填写游记标题" class="ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched">
+            </div>
+            <div class="showtitle ng-binding ng-hide" ng-hide="showall">【蜂首纪念】两个人的爱琴海(希腊深度游 Mykonos/Santorini/Athens)</div>
+        </div>
+    </div>
+    <div class="container clear">
+        <div class="content">
+            <div class="content-box">
+                <div class="textarea_placeholder">
+                    <div class="textarea" contenteditable="true"><p class="_j_note_content _j_seqitem" data-seq="130713690" style="margin-bottom: 20px; word-wrap: break-word; line-height: 28px; text-align: justify; word-break: break-all; font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti;">一直不愿意落笔开始写这篇游记，不舍得的，要记住的，要怀念的回忆很多，想要把行程发生的一切记下来，却总觉得自己的文字能力不足以完整地表达一切。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这篇旅行随笔很长，保存的5号字文档洋洋洒洒也有15页，希望在阅读的你在看完后能对<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/17211.html" class="link _j_keyword_mdd" data-kw="爱琴海" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142);">爱琴海</a>多了一份美好的憧憬，或者在对计划行程的你多了一份帮助，那它的作用也足矣。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/17211.html" class="link _j_keyword_mdd" data-kw="爱琴海" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142);">爱琴海</a>属于两个人：你，和我。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;它既不适合一个人独游，也不适合一群朋友闹腾。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一望无际的蔚蓝360°包围着你的视野，散落遍地的蓝顶教堂散发着神圣的气息，<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;满眼尽是白墙的小屋被开得特别灿烂的三角梅爬满了屋顶。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这个纯净得只有蓝与白的世界里，也应该只有你和我一起享受无声流动的时光。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——题记</p><p class="_j_note_content _j_seqitem" data-seq="130713935" style="margin-bottom: 20px; word-wrap: break-word; line-height: 28px; text-align: justify; word-break: break-all; font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti;">回答几个问得比较多的问题：<br><img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;"><img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;">这次旅行不含购物，其他费用人均1w5rmb<br><img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;"><img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;">相机用的还是老家伙：600d+套机镜头+sigma&nbsp;-20mm镜头+Canon佳能EF&nbsp;50mm&nbsp;f/1.8<br><img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;"><img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;">后期处理是ps+美图秀秀<br><img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;"><img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;">还有，照片都是架三角架自拍的，没有找摄影师<br><img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;">还有还有妹子175，大家不用再好奇了<img src="http://images.mafengwo.net/images/i/face/daily_v2/30@2x.png" style="border: 0px; vertical-align: middle; width: 23px;">&nbsp; &nbsp; &nbsp; &nbsp;</p><img class="img-add" src="../img/user_imgs/yB9GwyDxjbj6Cbp429GYw1la.jpeg"><div><br><img class="img-add" src="../img/user_imgs/AMN64qtm3Y_0wdaXsM5sTVzG.jpeg"></div><div><br><img class="img-add" src="../img/user_imgs/xlU925TadZLAs2N1XrsF_EtG.jpeg"></div><div><br></div><div><img class="img-add" src="../img/user_imgs/vc-3jM_0NQpBdJvvrPCaRVUt.jpeg"></div><div><br><img class="img-add" src="../img/user_imgs/Z4tE-Kvmo1m3sstsGUy8o8Z1.jpeg"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-box">
+                <input id="file2" class="choose-file1" type="file">
+                <label for="file2">
+                    <div class="sidebar-item add-photo" ng-show="showall">
+                        <span class="add-btn">
+                            <i class="icon-photo"></i>插入图片
+                        </span>
+                    </div>
+                </label>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-emotion"></i>插入表情
+                    </span>
+                </div>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-video"></i>插入视频
+                    </span>
+                </div>
+
+                <div class="sidebar-item" ng-click="showPanel()" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-title"></i>插入段落标签
+                    </span>
+                    <div class="add-panel ng-hide" ng-show="show">
+                        <div class="inner">
+                            <div class="a-form clear">
+                                <div class="a-inpwrap clear">
+                                    <input ng-model="aInput" type="text" class="a-input ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" placeholder="请输入段落名称" maxlength="20">
+                                    <span ng-click="addPanel($event)" class="a-btn">确定</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input id="file3" class="choose-file2" type="file">
+                <label for="file3">
+                    <div class="sidebar-item add-audio" ng-click="showAudio"><span class="music"><audio loop="loop" autoplay="autoplay" controls="controls" src="../img/user_imgs/yCr9d7iSpxlLXzmHRz1cT1OJ.mp3"></audio>Bruno Mars - Marry You</span></div>
+                </label>
+            </div>
+        </div>
+        <div class="action-ft" ng-show="showall">
+            <div class="action-wrap">
+                <div class="item-btn fr text-right">
+                    <a class="btn-publish" ng-click="publish()">发表游记</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

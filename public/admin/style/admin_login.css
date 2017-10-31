@@ -1,0 +1,123 @@
+body {
+    margin:0;
+    padding: 0;
+    background: url("../img/loginbg.jpg") no-repeat; 
+}
+
+.wrapper {
+    width: 980px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -300px 0 0 -490px;
+    z-index: 2;
+}
+
+
+.wrapper .login-forms {
+    width: 400px;
+    height: 250px;
+    background: white;
+    color: #666;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.4);
+    padding: 10px;
+}
+
+.wrapper .login-forms .register-form {
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.wrapper .login-forms .register-form span {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.wrapper .login-forms .register-form>input {
+    outline: none;
+    text-indent: 5px;
+    width: 270px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #666;
+    margin-left: 10px;
+}
+
+.wrapper .login-forms .register-form #rememberPwd {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    color: #999;
+    -webkit-user-select: none;
+}
+
+.wrapper .login-forms .register-form label {
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+
+.wrapper .login-forms .register-form .btn {
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    background: #18bc9c;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.wrapper .login-forms .register-form .btn:hover{
+    background: #128f76;
+}
+
+input::-webkit-input-placeholder{
+    color:#aaa;
+}
+
+.errorTips {
+    position: absolute;
+    top: 10px;
+    width: 350px;
+    height: 20px;
+    color: red;
+    text-indent: 80px;
+}
+
+.bottom-link {
+    width: 140px;
+    margin: 10px auto;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,.4);
+    font-size: 12px;
+    color: #fff;
+    padding: 4px 0;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+}
+
+.bottom-link a {
+    color: #ffa800;
+    margin-left: 6px;
+}
+
+.bottom-link a:hover {
+    text-decoration: underline;
+}
+
+.fullscreen-bg {
+    background-position: 50% 50%;
+    background-size: cover;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}

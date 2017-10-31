@@ -1,0 +1,211 @@
+<html lang="en"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="UTF-8">
+    <title>添加文字 - 写游记</title>
+    <link rel="shortcut icon" href="../../img/bitbug_favicon.ico">
+    <link href="../../style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/resize.css">
+    <link rel="stylesheet" href="../style/modify.css">
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../../js/jquery-slimScroll.js"></script>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/angular-cookies.min.js"></script>
+    <!-- <script src="../js/modify.js"></script> -->
+
+
+</head>
+
+<body ng-app="app" ng-controller="c" class="ng-scope">
+    <!-- 头部开始 -->
+    <div class="mfw-header">
+        <div class="header-wrap">
+            <!-- logo -->
+            <div class="header-logo fl">
+                <a class="mfw-logo" href="mfw-logo" title="马蜂窝自由行"></a>
+            </div>
+            <!-- 导航 -->
+            <ul class="header-nav fl">
+                <li class="fl"><a href="../../index.html">首页</a></li>
+                <li class="fl"><a href="../../tpl/mdd.html" title="目的地">目的地</a>
+                    <p class="bg-line"></p>
+                </li>
+                <li class="fl"><a href="" title="旅游攻略">旅游攻略</a><span class="bg-line"></span></li>
+                <li class="fl sales">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="自由行商城">
+                                <span>自由行商城<i class="icon-down"></i></span>
+                            </a>
+                    <div class="dropdown-menu dropdown-sales">
+                        <ul>
+                            <li><a target="_blank" href="">机票＋酒店<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="">跟团游</a></li>
+                            <li><a target="_blank" href="">当地游</a></li>
+                            <li><a target="_blank" href="">国内机票<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="">签证</a></li>
+                            <li><a target="_blank" href="">国际租车</a></li>
+                            <li><a target="_blank" href="">保险</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="酒店">酒店</a><span class="bg-line"></span></li>
+                <li class="fl community">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="社区">
+                            <span>社区<i class="icon-down"></i></span>
+                        </a>
+                    <div class="dropdown-menu dropdown-community">
+                        <ul class="nav-list fl">
+                            <li class="fc-orange"><a target="_blank" href="" title="问答">问答<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝周边">蚂蜂窝周边<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="" title="蜂蜜兑换">蜂蜜兑换</a></li>
+                            <li class="h"><a target="_blank" href="" title="结伴">结伴</a></li>
+                        </ul>
+                        <ul class="nav-list-sub fl">
+                            <li><a target="_blank" href="" title="小组论坛">小组论坛</a></li>
+                            <li><a target="_blank" href="" title="分舵同城">分舵同城</a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝拍卖行">蚂蜂窝拍卖行</a></li>
+                            <li><a target="_blank" href="" title="蜂首聚乐部">蜂首聚乐部</a></li>
+                            <li><a target="_blank" href="" title="照片PK">照片PK</a></li>
+                            <li><a target="_blank" href="" title="真人兽">真人兽</a></li>
+                            <li><a target="_blank" href="" title="道具商店">道具商店</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="APP">APP</a><span class="bg-line"></span></li>
+            </ul>
+            <!-- 未登录时导航栏右侧 -->
+            <div class="login-out fr ng-hide" ng-show="false">
+                <a class="weibo-login" href="" title="微博登录"></a>
+                <a class="qq-login" href="" title="QQ登录"></a>
+                <a class="weixin-login" href="" title="微信登录"></a>
+                <a class="login" href="tpl/login.html" title="登录蚂蜂窝">登录</a>
+                <span>|</span>
+                <a class="signin" href="tpl/register.html" title="注册帐号">注册</a>
+            </div>
+            <!-- 登录时导航栏右侧 -->
+            <div class="login-info fr" ng-hide="false">
+                <div class="header-daka fl">
+                    <a class="header-daka-btn text-center">打卡</a>
+                </div>
+                <div class="header-msg fl">
+                    <a><i class="icon-msg"></i>消息
+                        <i class="icon-down"></i></a>
+                    <div class="dropdown-menu dropdown-msg">
+                        <ul>
+                            <li class="text-left"><a target="_blank" href="" title="私信">私信</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="文章消息">文章消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="小组消息">小组消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="系统通知">系统通知</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="问答消息">问答消息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-user fl">
+                    <a href="">
+                        <div class="user-image">
+                            <img src="../../img/user-img.jpeg">
+                            <i class="icon-down"></i>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-user">
+                        <ul>
+                            <li class="text-left"><b class="i1"></b><a target="_blank" href="" title="我的马蜂窝">我的马蜂窝</a></li>
+                            <li class="text-left"><b class="i2"></b><a target="_blank" href="" title="写游记">写游记</a></li>
+                            <li class="text-left"><b class="i3"></b><a target="_blank" href="" title="预约游记">预约游记</a></li>
+                            <li class="text-left"><b class="i4"></b><a target="_blank" href="" title="我的足迹">我的足迹</a></li>
+                            <li class="text-left"><b class="i5"></b><a target="_blank" href="" title="我的问答">我的问答</a></li>
+                            <li class="text-left"><b class="i6"></b><a target="_blank" href="" title="我的好友">我的好友</a></li>
+                            <li class="text-left"><b class="i7"></b><a target="_blank" href="" title="我的收藏">我的收藏</a></li>
+                            <li class="text-left"><b class="i8"></b><a target="_blank" href="" title="我的路线">我的路线</a></li>
+                            <li class="text-left"><b class="i9"></b><a target="_blank" href="" title="我的订单">我的订单</a></li>
+                            <li class="text-left"><b class="i10"></b><a target="_blank" href="" title="我的优惠券">我的优惠券</a></li>
+                            <li class="text-left"><b class="i11"></b><a target="_blank" href="" title="设置">设置</a></li>
+                            <li class="text-left"><b class="i12"></b><a target="_blank" href="../../index.html" title="退出">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow">
+        </div>
+    </div>
+    <!-- 头部结束 -->
+    <!-- 游记标题及头图 -->
+    <div class="pagelet-block">
+        <div class="set-index">
+            <div class="set-bg"><img src="../img/user_imgs/zLdqC-6y912JzGQ12Rrl1B4r.jpeg"></div>
+            <div class="set-page" ng-show="showall">
+                <label for="file1"><span class="set-add"></span></label>
+                <input id="file1" class="choose-file" type="file">
+                <h2>设置游记头图</h2>
+                <p>图片建议选择尺寸大于1680px的高清大图，如相机原图</p>
+            </div>
+            <div class="set-title" ng-show="showall">
+                <input ng-model="noteTitle" type="text" maxlength="48" placeholder="填写游记标题" class="ng-valid ng-valid-maxlength ng-touched ng-not-empty ng-dirty ng-valid-parse">
+            </div>
+            <div class="showtitle ng-binding ng-hide" ng-hide="showall">巴基斯坦snowlake冰川徒步，2015年8-9月的雪山、巴铁</div>
+        </div>
+    </div>
+    <div class="container clear">
+        <div class="content">
+            <div class="content-box">
+                <div class="textarea_placeholder">
+                    <div class="textarea" contenteditable="true"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">开始这段奇幻旅程的介绍前先说一下我们要征服</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11697.html" class="link _j_keyword_mdd" data-kw="巴基斯坦" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">巴基斯坦</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">北部山区与snowlake（雪湖）。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11697.html" class="link _j_keyword_mdd" data-kw="巴基斯坦" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">巴基斯坦</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">北部山区</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">这里包含海拔8000米以上的世界第二高峰8611mk2</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/28929.html" class="link _j_keyword_mdd" data-kw="乔戈里峰" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">乔戈里峰</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">，第九高峰8125m&nbsp;,Nanga&nbsp;Parbat南迦帕尔巴特峰，第11、12、13高峰，Gasherbrum&nbsp;I迦舒</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/18297.html" class="link _j_keyword_mdd" data-kw="布鲁姆" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">布鲁姆</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">1峰，海拔8068米,Broad布洛阿特峰，海拔8051米和Gasherbrum&nbsp;II迦舒</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/18297.html" class="link _j_keyword_mdd" data-kw="布鲁姆" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">布鲁姆</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">2峰，海拔8034米,除了杀人峰南迦帕尔巴特属于喜马拉雅</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/13033.html" class="link _j_keyword_mdd" data-kw="山西" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">山西</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">段之外，其他都属于喀喇</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11651.html" class="link _j_keyword_mdd" data-kw="昆仑山" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">昆仑山</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">脉，而且喀喇</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11651.html" class="link _j_keyword_mdd" data-kw="昆仑山" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">昆仑山</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">脉平均海拔6000米以上，共有19座山峰超过7260米，8个山峰超过7500米，而6000米以上的山峰简直不可胜数了。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11697.html" class="link _j_keyword_mdd" data-kw="巴基斯坦" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">巴基斯坦</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">snowlake</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">世界顶级徒步线路之一</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">喀喇</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11651.html" class="link _j_keyword_mdd" data-kw="昆仑山" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">昆仑山</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">区除K2BC之外的另1条长距离徒步线路</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">这条线路的起点和众所周知的K2BC线路相同，也是从askole村出发</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">而后转向</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/31808.html" class="link _j_keyword_mdd" data-kw="西北" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">西北</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">方，穿过两条巨大的冰川biafo冰川和hispar冰川（喀喇</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11651.html" class="link _j_keyword_mdd" data-kw="昆仑山" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">昆仑山</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">区第三和第四大冰川）</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">最后抵达hispar村，而后乘车回到hunza。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">在徒步路线的中段，biafo冰川的源头，是世界上除极地之外，最大的四季不化的雪盆地snowlake</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">徒步路线也因此得名。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">与K2BC徒步线路相比（摘自土人大哥帖子，感谢前辈）：</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">1、snowlake线路名气要小，风景较K2BC略单调（和我们走完k2bc的队友一遭走下来哪有单调一说，景色和地貌都丰富的不要不要的，有图有真相)，而难度个人感觉甚至更难一点（这个倒是真的，我们走完更验证了这一点）。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">2、徒步人数比k2BC少很多。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">实际上，喀喇</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11651.html" class="link _j_keyword_mdd" data-kw="昆仑山" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">昆仑山</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">区哪怕最热门的K2BC线，徒步人数也远远不能和</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10069.html" class="link _j_keyword_mdd" data-kw="尼泊尔" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">尼泊尔</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">的</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/17374.html" class="link _j_keyword_mdd" data-kw="安娜普尔娜" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">安娜普尔娜</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">或EBC相比。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">由于来自西方国家的游客大幅减少，K2BC现在的徒步游客人数（不包括向导背夫），全年估计不到一千人；</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">而snowlake线，12年7月份一个月总共只有五队客人，这样估算起来全年徒步游客人数连一百人都不到（我们走的是9月份，较7月份增加了难度和风险，冰裂缝间隙最大时间）。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">3、天气更变化无常。snowlake线是两条巨大的东南－</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/31808.html" class="link _j_keyword_mdd" data-kw="西北" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">西北</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">方向山谷相连组成的，中间的垭口海拔5100多米，空气湿润，多降雨降雪，天气比起K2BC线路更加无常。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">7月份的五支队伍中，因为天气原因，只有一支队伍</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/64941.html" class="link _j_keyword_mdd" data-kw="成功" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">成功</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">穿越snowlake并翻越垭口，完成全程徒步，其他四支队伍都不得不半途而返。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">这条线路现在人气清淡，但是历史上，它曾经是古</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/141880.html" class="link _j_keyword_mdd" data-kw="丝绸之路" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">丝绸之路</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">的一部分。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">千年以前，我们的祖先，曾经赶着驮队，从</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/13061.html" class="link _j_keyword_mdd" data-kw="新疆" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">新疆</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">往南穿越喀喇昆仑抵达hunza，走这条线路到达skardu，再往东南到达</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10182.html" class="link _j_keyword_mdd" data-kw="印度" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">印度</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">随着</span><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/141880.html" class="link _j_keyword_mdd" data-kw="丝绸之路" target="_blank" style="color: rgb(77, 77, 77); cursor: pointer; outline: 0px; border-bottom: 1px solid rgb(148, 142, 142); font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">丝绸之路</a><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">的衰落，这条线路也变得冷清，而今除了少量徒步和登山队伍，没有人光顾。</span><br style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;">算是一条相对小众的徒步线路。</span><div><span style="font-family: Arial, &quot;Lucida Grande&quot;, &quot;Microsoft Yahei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Hiragino Sans GB W3&quot;, SimSun, &quot;PingFang SC&quot;, STHeiti; text-align: justify;"><br></span></div><img class="img-add" src="../img/user_imgs/m5rO_GhvKlopCsjkDFfWpb8W.jpeg"><div><br><img class="img-add" src="../img/user_imgs/IkHmYNVHfXuZfVsVIrGBIods.jpeg"></div><div><br><img class="img-add" src="../img/user_imgs/AcZ0MZi2HQnoH58_QbWKtWnR.jpeg"></div><div><br><img class="img-add" src="../img/user_imgs/sHDg3zQRExT4JXRcKxoOf9xH.jpeg"></div><div><br><img class="img-add" src="../img/user_imgs/3Iye7CDezzFOJX15qTj-F-BI.jpeg"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-box">
+                <input id="file2" class="choose-file1" type="file">
+                <label for="file2">
+                    <div class="sidebar-item add-photo" ng-show="showall">
+                        <span class="add-btn">
+                            <i class="icon-photo"></i>插入图片
+                        </span>
+                    </div>
+                </label>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-emotion"></i>插入表情
+                    </span>
+                </div>
+                <div class="sidebar-item" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-video"></i>插入视频
+                    </span>
+                </div>
+
+                <div class="sidebar-item" ng-click="showPanel()" ng-show="showall">
+                    <span class="add-btn">
+                        <i class="icon-title"></i>插入段落标签
+                    </span>
+                    <div class="add-panel ng-hide" ng-show="show">
+                        <div class="inner">
+                            <div class="a-form clear">
+                                <div class="a-inpwrap clear">
+                                    <input ng-model="aInput" type="text" class="a-input ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" placeholder="请输入段落名称" maxlength="20">
+                                    <span ng-click="addPanel($event)" class="a-btn">确定</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input id="file3" class="choose-file2" type="file">
+                <label for="file3">
+                    <div class="sidebar-item add-audio" ng-click="showAudio"><span class="music"><audio loop="loop" autoplay="autoplay" controls="controls" src="../img/user_imgs/9gPtSC3n6SlrqNfqFSaErT7U.mp3"></audio>陈粒 - 大梦</span></div>
+                </label>
+            </div>
+        </div>
+        <div class="action-ft" ng-show="showall">
+            <div class="action-wrap">
+                <div class="item-btn fr text-right">
+                    <a class="btn-publish" ng-click="publish()">发表游记</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

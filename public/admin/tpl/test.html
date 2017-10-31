@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>马蜂窝 - 后台管理系统</title>
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../style/activity.css">
+    <link rel="shortcut icon" href="../../img/bitbug_favicon.ico">
+    <link rel="stylesheet" href="../../style/resize.css">
+    <script src="../../js/angular.min.js"></script>
+    <script src="../js/activity.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="activityC">
+    <table border="1" cellspacing="0" cellpadding="0">
+        <tr class="first">
+            <td></td>
+            <td class="id">序号</td>
+            <td>图片地址</td>
+            <td>标题</td>
+            <td>内容</td>
+            <td colspan="2">操作</td>
+        </tr>
+        <tr ng-repeat="data in userdata">
+            <td><input class="check_btn" type="checkbox" ng-model="data.selected"></td>
+            <td>{{data.id}}</td>
+            <td>{{data.imgUrl}}</td>
+            <td>{{data.title}}</td>
+            <td>{{data.content}}</td>
+            <td><input class="btn edit_btn" type="button" value="修改" ng-click="modifyData(data.id,$index)"></td>
+            <td><input class="btn delete_btn" type="button" value="删除" ng-click="delData(data.id,$index)"></td>
+
+        </tr>
+        <tr>
+            <td colspan="7">
+                <ul ng-style="{listStyle:'none'}">
+                    <li ng-repeat="data in datas" ng-click="showData($index+1)">{{data}}</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="btn delete_more_btn" type="button" value="删除选中" ng-click="delMoreData()"></td>
+        </tr>
+
+    </table>
+</body>
+
+</html>

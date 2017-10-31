@@ -1,0 +1,212 @@
+body {
+    overflow: hidden;
+    background-color: #F0F3F4;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    background: #23262E; 
+    position: relative;
+}
+
+.header .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    line-height: 60px;
+    text-align: center;
+    color: #009688;
+    font-size: 16px;
+}
+
+.header .nav {
+    padding: 0 20px;
+    position: absolute;  
+    display: inline-block;
+}
+
+
+.header .nav li {
+    text-align: center;
+    line-height: 60px;
+    display: inline-block;
+    color: rgba(255,255,255,.7);
+    font-size: 14px;
+    transition: all .3s;
+    position: relative;
+}
+
+.header .nav li a {
+    display: block;
+    line-height: 60px;
+    padding: 0 20px;
+}
+
+.header .nav li .nav_more {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 28px;
+    right: 3px;
+    border: 6px solid transparent;
+    border-top-color: rgba(255,255,255,.7);
+    transition: all .3s;
+    z-index: 20;
+}
+
+.header .nav dl {
+    position: absolute;
+    left: 0;
+    top: 65px;
+    padding: 5px 0;
+    color: #333;
+    border: 1px solid #d2d2d2;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.12);
+    display: none;
+}
+
+.header .nav dl dd {
+    line-height: 36px;
+    transition: all .3s;
+}
+
+.header .nav dl dd a {
+   line-height: 36px;
+   padding: 0 20px; 
+   white-space: nowrap;
+}
+
+.header .nav dl dd:hover {
+    background: #f2f2f2;
+}
+
+
+.header .nav li:hover {
+    color: white;
+}
+
+.header .nav_right {
+    right: 0;
+    top: 0;
+}
+
+.header .nav_right li {
+    position: relative;
+}
+
+.header .nav_right li a img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.header .nav_right .file {
+    display: none;
+}
+
+.left_side {
+    position: absolute;
+    top: 60px;
+    width: 200px;
+    background: #393D49;
+    height: 100%;
+    overflow: hidden;
+}
+
+.left_side .nav {
+    width: 220px;
+    position: relative;
+}
+
+.left_side .nav li {
+    line-height: 45px;
+    color: rgba(255,255,255,.7);
+    position: relative; 
+}
+
+.left_side .nav li a {
+    display: block;
+    padding: 0 20px;
+    font-size: 14px;
+    height: 45px;
+    transition: all .3s;
+}
+
+.left_side .nav li>a:hover {
+    background: #4E5465;
+    color: white;
+}
+
+.left_side .nav li .nav_more {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    border: 6px solid transparent;
+    border-top-color: rgba(255,255,255,.7);
+    transition: all .3s;
+}
+
+.left_side .nav li .nav_mored {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 30px;
+    top: 14px;
+    border: 6px solid transparent;
+    border-bottom-color: white;
+}
+
+.left_side .nav dl {
+    background: rgba(0,0,0,.3);
+}
+
+
+
+.left_side .nav dl dd a {
+    transition: all .3s;
+    height: 40px;
+    line-height: 40px;
+}
+
+.left_side .nav dl dd:hover a {
+    color: white;
+}
+
+ .left_side .line {
+    width: 5px; 
+    height: 0px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #009688; 
+} 
+
+.header .nav_left .top_line {
+    width: 0px; 
+    height: 5px;
+    position: absolute;
+    left: 0px;
+    top: 55px;
+    background: #009688;
+}
+
+iframe {
+    position: absolute;
+    left: 200px;
+    top: 60px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 10;
+    padding:10px 32px 120px 40px;
+}

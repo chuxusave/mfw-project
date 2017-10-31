@@ -1,0 +1,412 @@
+
+.container .place-focus {
+    position: relative;
+}
+
+.container .place-focus .show-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container .place-focus .show-banner .cover {
+    height: auto;
+    background: #ccc;
+}
+
+.container .place-focus .show-banner .bigimg {
+    width: 100%;
+    height: 428px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .place-focus .show-banner .bigimg img {
+    margin: -264.828px 0px 0px;
+    width: 100%;
+    height: auto;
+}
+
+.container .place-focus .show-info {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    width: 535px;
+    height: 170px;
+    margin-right: auto;
+    margin-top: -120px;
+    padding-right: 30px;
+    border-right: 7px solid #fff;
+    text-shadow: 0 2px 3px rgba(0,0,0,.5);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    white-space: normal;
+    text-align: left;
+}
+
+.container .place-focus .show-info .show-name {
+    margin: 10px 0;
+    font-size: 40px;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.container .place-focus .show-info .show-name h2 {
+    font-weight: normal;
+    line-height: inherit;
+    font-size: 30px;
+}
+
+.container .place-focus .show-info .show-name h2:hover {
+    color: #ff9d00;
+}
+
+.container .place-focus .show-info .show-links {
+    font-size: 18px;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.container .place-focus .show-info .show-links:hover {
+    color: #ff9d00;
+}
+
+.container .place-focus .show-arrdown {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    margin-left: -18px;
+    width: 36px;
+    height: 20px;
+    background: url("../img/place-sprites3.png") no-repeat -30px -60px;
+    overflow: hidden;
+}
+
+.container .place-focus .place-search-panel {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    margin: -71px 0 0 -500px;
+    padding: 15px;
+    background-color: rgba(0,0,0,.4);
+    border-radius: 4px;
+}
+
+.container .place-focus .place-search-panel h2 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.container .place-focus .place-search-panel .searchbar input {
+    outline: none;
+    width: 268px;
+    height: 36px;
+    margin: 0 6px 0 0;
+    padding: 0 20px;
+    background-color: #fff;
+    border: none;
+    font-size: 18px;
+    color: #111;
+    border-radius: 4px;
+    float: left;
+}
+
+.container .place-focus .place-search-panel .searchbar .search-btn {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    float: left;
+    background-color: #ff9d00;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.container .place-focus .place-search-panel .searchbar .search-btn .icon-search {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("../img/header-sprites.png") no-repeat 0 -110px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.container .place-focus .place-search-panel .place-search-hot {
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 16px;
+}
+
+.container .place-focus .place-search-panel .place-search-hot a {
+    margin-right: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.container .place-focus .place-search-panel .place-search-hot a:hover {
+    text-decoration: underline;
+}
+
+.container .iamad-fxckme {
+    width: 1000px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.container .iamad-fxckme .icon-ad {
+    position: absolute;
+    bottom: 7px;
+    left: 4px;
+    width: 22px;
+    height: 12px;
+}
+
+.container .row {
+    padding: 40px 0;
+    word-wrap: break-word;
+}
+
+.container .row .wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.container .row .wrapper .r-title {
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.container .row .wrapper .r-title h2 {
+    margin-bottom: 8px;
+    font-size: 26px;
+    font-weight: normal;
+    color: #333;
+    line-height: 26px;
+}
+
+.container .row .wrapper .r-navbar {
+    margin: -10px 0 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #eee;
+    line-height: 22px;
+}
+
+.container .row .wrapper .r-navbar .active {
+    padding-bottom: 12px;
+    color: #ff9d00;
+    border-bottom: 3px solid #ff9d00;
+}
+
+.container .row .wrapper .r-navbar a {
+    display: inline-block;
+    margin: 0 25px;
+    vertical-align: top;
+    color: #333;
+}
+
+.container .row-hot .wrapper .hot-list {
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.container .row-hot .wrapper .hot-list .col {
+    float: left;
+    width: 470px;
+}
+
+.container .row-hot .wrapper .hot-list .col dl {
+    border-bottom: 1px dashed #eee;
+    padding: 20px 0 20px 100px;
+}
+
+.container .row-hot .wrapper .hot-list .col dl dt {
+    float: left;
+    font-size: 16px;
+    color: #333;
+    margin-left: -100px
+}
+
+.container .row-hot .wrapper .hot-list .col dl dt a {
+    text-decoration: underline;
+}
+
+.container .row-hot .wrapper .hot-list .col dl dd a {
+    margin-right: 10px;
+    color: #666;
+}
+
+.container .row-hot .wrapper .hot-list .col dl a:hover {
+    color: #ff8a00;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hot-list .col + .col {
+    margin-left: 60px;
+}
+
+.container .row-hot .wrapper .hot-list .col dl:last-child {
+    border-bottom: 0 none;
+    padding-bottom: 0;
+}
+
+.container .row-line {
+    height: 1px;
+    background-color: #e4e4e4;
+    overflow: hidden;
+}
+
+.container .row-season .wrapper .r-navbar a {
+    margin: 0 20px
+}
+
+.container .row-season .wrapper .r-navbar span{
+    display: inline-block;
+    margin-top: 3px;
+    width: 1px;
+    height: 15px;
+    background-color: #eee;
+    overflow: hidden;
+    line-height: 100px;
+    vertical-align: top;
+}
+
+.container .row-bg {
+    background-color: #fafafa;
+    padding: 40px 0;
+}
+
+.container .row-season .wrapper .seasons-mdd .titles {
+    margin: -10px -20px -10px 0;
+    overflow: hidden;
+}
+
+.container .row-season .wrapper .seasons-mdd .titles .item {
+    float: left;
+    display: inline-block;
+    margin: 10px 15px 10px 0;
+    height: 220px;
+    position: relative;
+    background-color: #f2f2f2;
+    font-size: 20px;
+}
+
+.container .row-season .wrapper .seasons-mdd .titles .col3 {
+    width: 323px;
+}
+
+.container .row-season .wrapper .seasons-mdd .titles .col4 {
+    width: 238px;
+}
+
+.container .row-season .wrapper .seasons-mdd .titles .item a {
+    display: block;
+    height: 220px;
+    color: #fff;
+    transition: all .2s ease-in 0s;
+    
+}
+
+.container .row-season .wrapper .seasons-mdd .titles .item a:hover {
+    box-shadow: 0 0 7px rgba(0,0,0,.3);
+}
+
+.container .row-season .wrapper .seasons-mdd .titles .col3 a img {
+    width: 323px;
+    height: 220px;
+    border: 0;
+}
+
+.container .row-season .wrapper .seasons-mdd .titles .col4 a img {
+    width: 238px;
+    height: 220px;
+}
+
+.container .row-season .wrapper .seasons-mdd .titles .item a .title {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    padding: 12px 20px 0;
+    height: 57px;
+    line-height: 56px;
+    font-weight: normal;
+    transition: opacity .5s ease 0s;
+    color: #fff;
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 10px,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.5) 100%);
+}
+
+.container .row-season .wrapper .seasons-mdd .titles .item a .more {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,.5);
+    line-height: 220px;
+}
+
+.container .row-theme .wrapper .theme-mdd .titles {
+    margin: -10px -20px -10px 0;
+    overflow: hidden;
+}
+
+.container .row-theme .wrapper .theme-mdd .titles .item {
+    float: left;
+    display: inline;
+    margin: 10px 15px 10px 0;
+    width: 238px;
+    height: 220px;
+    position: relative;
+    background-color: #f2f2f2;
+    font-size: 20px;
+}
+
+.container .row-theme .wrapper .theme-mdd .titles .item  a {
+    display: block;
+    height: 220px;
+    color: #fff;
+    transition: all .2s ease-in 0s;
+}
+
+.container .row-theme .wrapper .theme-mdd .titles .item  a img {
+    width: 238px;
+    height: 220px;
+}
+
+.container .row-theme .wrapper .theme-mdd .titles .item .title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 12px 20px 0;
+    height: 57px;
+    line-height: 56px;
+    font-weight: normal;
+    transition: opacity .5s ease 0s;
+    color: #fff;
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 10px,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.5) 100%);
+}
+
+.container .row-theme .wrapper .theme-mdd .titles .item a:hover {
+    box-shadow: 0 0 7px rgba(0,0,0,.3);
+}
+
+
+
+
+
+
+
+

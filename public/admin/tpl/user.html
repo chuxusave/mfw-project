@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>马蜂窝 - 后台管理系统</title>
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../style/ngTable.css">
+    <script src="../js/lodash.min.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../js/ng-table.min.js"></script>
+    <link rel="stylesheet" href="../style/user.css">
+    <script src="../js/user.js"></script>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="editStoreItemController as vm" class="pageback">
+        <h3>会员管理</h3>
+        <p>*注意：会员管理只能查看，暂时无权限更改</p>
+        <table ng-table="vm.tableParams" class="table table-condensed table-bordered table-striped">
+            <tr ng-repeat="row in $data">
+                <td data-title="'序号'" filter="{id: 'number'}" sortable="'id'">{{row.id}}</td>
+                <td data-title="'用户名'" filter="{Name: 'text'}" sortable="'Name'">{{row.Name}}</td>
+                <td data-title="'密码'" filter="{Pwd: 'text'}" sortable="'Pwd'">{{row.Pwd}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

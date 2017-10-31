@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>目的地旅游攻略 - 蚂蜂窝</title>
+    <link rel="shortcut icon" href="../img/bitbug_favicon.ico">
+    <link href="../style/main.css" rel="stylesheet">
+    <link href="../style/mdd.css" rel="stylesheet">
+    <link href="../style/main_footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/resize.css">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/mdd.js"></script>
+    <script src="../js/jquery-slimScroll.js"></script>
+    <script src="../js/angular-cookies.min.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="c">
+    <!-- 头部开始 -->
+    <div class="mfw-header">
+        <div class="header-wrap">
+            <!-- logo -->
+            <div class="header-logo fl">
+                <a class="mfw-logo" href="mfw-logo" title="马蜂窝自由行"></a>
+            </div>
+            <!-- 导航 -->
+            <ul class="header-nav fl">
+                <li class="fl"><a href="../index.html">首页</a></li>
+                <li class="fl bg-orange"><a href="mdd.html" title="目的地">目的地</a>
+                    <p class="bg-line"></p>
+                </li>
+                <li class="fl"><a href="" title="旅游攻略">旅游攻略</a><span class="bg-line"></span></li>
+                <li class="fl sales">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="自由行商城">
+                            <span>自由行商城<i class="icon-down"></i></span>
+                        </a>
+                    <div class="dropdown-menu dropdown-sales">
+                        <ul>
+                            <li><a target="_blank" href="">机票＋酒店<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="">跟团游</a></li>
+                            <li><a target="_blank" href="">当地游</a></li>
+                            <li><a target="_blank" href="">国内机票<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="">签证</a></li>
+                            <li><a target="_blank" href="">国际租车</a></li>
+                            <li><a target="_blank" href="">保险</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="酒店">酒店</a><span class="bg-line"></span></li>
+                <li class="fl community">
+                    <div class="bg-white"></div>
+                    <span class="bg-line"></span>
+                    <a href="" title="社区">
+                        <span>社区<i class="icon-down"></i></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-community">
+                        <ul class="nav-list fl">
+                            <li class="fc-orange"><a target="_blank" href="" title="问答">问答<i class="icon-hot">hot</i></a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝周边">蚂蜂窝周边<i class="icon-new">new</i></a></li>
+                            <li><a target="_blank" href="" title="蜂蜜兑换">蜂蜜兑换</a></li>
+                            <li class="h"><a target="_blank" href="" title="结伴">结伴</a></li>
+                        </ul>
+                        <ul class="nav-list-sub fl">
+                            <li><a target="_blank" href="" title="小组论坛">小组论坛</a></li>
+                            <li><a target="_blank" href="" title="分舵同城">分舵同城</a></li>
+                            <li><a target="_blank" href="" title="蚂蜂窝拍卖行">蚂蜂窝拍卖行</a></li>
+                            <li><a target="_blank" href="" title="蜂首聚乐部">蜂首聚乐部</a></li>
+                            <li><a target="_blank" href="" title="照片PK">照片PK</a></li>
+                            <li><a target="_blank" href="" title="真人兽">真人兽</a></li>
+                            <li><a target="_blank" href="" title="道具商店">道具商店</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="fl"><a href="" title="APP">APP</a><span class="bg-line"></span></li>
+            </ul>
+            <!-- 未登录时导航栏右侧 -->
+            <div class="login-out fr" ng-show="mycookie">
+                <a class="weibo-login" href="" title="微博登录"></a>
+                <a class="qq-login" href="" title="QQ登录"></a>
+                <a class="weixin-login" href="" title="微信登录"></a>
+                <a class="login" href="../tpl/login.html" title="登录蚂蜂窝">登录</a>
+                <span>|</span>
+                <a class="signin" href="../tpl/register.html" title="注册帐号">注册</a>
+            </div>
+            <!-- 登录时导航栏右侧 -->
+            <div class="login-info fr" ng-hide="mycookie">
+                <div class="header-daka fl">
+                    <a class="header-daka-btn text-center">打卡</a>
+                </div>
+                <div class="header-msg fl">
+                    <a><i class="icon-msg"></i>消息
+                    <i class="icon-down"></i></a>
+                    <div class="dropdown-menu dropdown-msg">
+                        <ul>
+                            <li class="text-left"><a target="_blank" href="" title="私信">私信</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="文章消息">文章消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="小组消息">小组消息</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="系统通知">系统通知</a></li>
+                            <li class="text-left"><a target="_blank" href="" title="问答消息">问答消息</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-user fl">
+                    <a href="">
+                        <div class="user-image">
+                            <img src="../img/user-img.jpeg">
+                            <i class="icon-down"></i>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-user">
+                        <ul>
+                            <li class="text-left"><b class="i1"></b><a target="_blank" href="" title="我的马蜂窝">我的马蜂窝</a></li>
+                            <li class="text-left"><b class="i2"></b><a target="_blank" href="../note/create/modify.html" title="写游记">写游记</a></li>
+                            <li class="text-left"><b class="i3"></b><a target="_blank" href="" title="预约游记">预约游记</a></li>
+                            <li class="text-left"><b class="i4"></b><a target="_blank" href="" title="我的足迹">我的足迹</a></li>
+                            <li class="text-left"><b class="i5"></b><a target="_blank" href="" title="我的问答">我的问答</a></li>
+                            <li class="text-left"><b class="i6"></b><a target="_blank" href="" title="我的好友">我的好友</a></li>
+                            <li class="text-left"><b class="i7"></b><a target="_blank" href="" title="我的收藏">我的收藏</a></li>
+                            <li class="text-left"><b class="i8"></b><a target="_blank" href="" title="我的路线">我的路线</a></li>
+                            <li class="text-left"><b class="i9"></b><a target="_blank" href="" title="我的订单">我的订单</a></li>
+                            <li class="text-left"><b class="i10"></b><a target="_blank" href="" title="我的优惠券">我的优惠券</a></li>
+                            <li class="text-left"><b class="i11"></b><a target="_blank" href="" title="设置">设置</a></li>
+                            <li class="text-left" ng-click="leave()"><b class="i12"></b><a target="_blank" href="" title="退出">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow">
+        </div>
+    </div>
+    <!-- 头部结束 -->
+    <!-- 主要内容开始 -->
+    <div class="container">
+        <!-- banner位 -->
+        <div class="place-focus">
+            <div class="show-banner">
+                <div class="cover">
+                    <a class="bigimg">
+                        <img src="../img/snow-banner.jpeg">
+                    </a>
+                </div>
+                <div class="show-info">
+                    <div class="show-name">
+                        <h2>雪乡最全玩法都在这，这个冬天去雪地里撒点野！</h2>
+                    </div>
+                    <p class="location">雪乡是冬季最值得去的地方之一，各种漂亮的”雪蘑菇”、映衬着皑皑白雪的大红灯笼、最纯正的林海雪原，美不胜收。这个冬天，去玩点不一样的，和傻狍子亲密接触、去雪地里撒点野吧！</p>
+                    <div class="show-links">
+                        <a>阅读全文</a>
+                    </div>
+                </div>
+                <a class="show-arrdown" href="#"></a>
+            </div>
+            <div class="place-search-panel">
+                <h2>Don't fear the unknown</h2>
+                <div class="searchbar clear">
+                    <input type="text" placeholder="我想去...">
+                    <a class="search-btn">
+                        <i class="icon-search"></i>
+                    </a>
+                </div>
+                <div class="place-search-hot">
+                    <a>三亚</a>
+                    <a>婺源</a>
+                    <a>新加坡</a>
+                    <a>普吉岛</a>
+                    <a>清迈</a>
+                </div>
+            </div>
+        </div>
+        <!-- 广告位 -->
+        <div class="iamad-fxckme">
+            <img src="../img/mdd-ad-1.jpeg">
+            <img class="icon-ad" src="../img/icon-ad.png">
+        </div>
+        <!-- 热门目的地 -->
+        <div class="row row-hot">
+            <div class="wrapper">
+                <div class="r-title">
+                    <h2>热门目的地</h2>
+                </div>
+                <div class="r-navbar">
+                    <a>国内</a>
+                    <span>|</span>
+                    <a>港澳台</a>
+                    <span>|</span>
+                    <a>日韩</a>
+                    <span>|</span>
+                    <a>东南亚</a>
+                    <span>|</span>
+                    <a>南亚 西亚</a>
+                    <span>|</span>
+                    <a>欧洲 美洲</a>
+                    <span>|</span>
+                    <a>澳洲 非洲</a>
+                </div>
+                <div>
+                    <div class="hot-list clear">
+                        <div class="col">
+                            <dl>
+                                <dt>直辖市</dt>
+                                <dd>
+                                    <a>北京</a>
+                                    <a>上海</a>
+                                    <a>重庆</a>
+                                    <a>天津</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a>云南</a></dt>
+                                <dd>
+                                    <a>丽江</a>
+                                    <a>大理</a>
+                                    <a>昆明</a>
+                                    <a>香格里拉</a>
+                                    <a>泸沽湖</a>
+                                    <a>双廊</a>
+                                    <a>西双版纳</a>
+                                    <a>束河</a>
+                                    <a>腾冲</a>
+                                    <a>雨崩</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a>四川</a></dt>
+                                <dd>
+                                    <a>成都</a>
+                                    <a>九寨沟</a>
+                                    <a>稻城</a>
+                                    <a>色达</a>
+                                    <a>若尔盖</a>
+                                    <a>都江堰</a>
+                                    <a>亚丁</a>
+                                    <a>阿坝</a>
+                                    <a>峨眉山</a>
+                                    <a>牛背山</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a>浙江</a></dt>
+                                <dd>
+                                    <a>杭州</a>
+                                    <a>乌镇</a>
+                                    <a>西塘</a>
+                                    <a>千岛湖</a>
+                                    <a>普陀山</a>
+                                    <a>东极岛</a>
+                                    <a>南浔</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>海南</a>
+                                    <a>福建</a>
+                                </dt>
+                                <dd>
+                                    <a>三亚</a>
+                                    <a>蜈支洲岛</a>
+                                    <a>海口</a>
+                                    <a>厦门</a>
+                                    <a>鼓浪屿</a>
+                                    <a>武夷山</a>
+                                    <a>泉州</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a>江苏</a></dt>
+                                <dd>
+                                    <a>南京</a>
+                                    <a>苏州</a>
+                                    <a>无锡</a>
+                                    <a>扬州</a>
+                                    <a>周庄</a>
+                                    <a>常州</a>
+                                    <a>连云港</a>
+                                    <a>同里</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>广东</a>
+                                    <a>广西</a>
+                                </dt>
+                                <dd>
+                                    <a>广州</a>
+                                    <a>深圳</a>
+                                    <a>珠海</a>
+                                    <a>汕头</a>
+                                    <a>桂林</a>
+                                    <a>阳朔</a>
+                                    <a>北海</a>
+                                    <a>黄姚古镇</a>
+                                    <a>涠洲岛</a>
+                                    <a>龙脊梯田</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>西藏</a>
+                                    <a>贵州</a>
+                                </dt>
+                                <dd>
+                                    <a>拉萨</a>
+                                    <a>林芝</a>
+                                    <a>阿里</a>
+                                    <a>黔东南</a>
+                                    <a>荔波</a>
+                                    <a>镇远</a>
+                                    <a>西江</a>
+                                    <a>黄果树</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a>西北</a></dt>
+                                <dd>
+                                    <a>西安</a>
+                                    <a>青海湖</a>
+                                    <a>西宁</a>
+                                    <a>祁连</a>
+                                    <a>敦煌</a>
+                                    <a>兰州</a>
+                                    <a>甘南</a>
+                                    <a>张掖</a>
+                                    <a>嘉峪关</a>
+                                    <a>新疆</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>山东</a>
+                                    <a>山西</a>
+                                </dt>
+                                <dd>
+                                    <a>青岛</a>
+                                    <a>泰山</a>
+                                    <a>日照</a>
+                                    <a>威海</a>
+                                    <a>烟台</a>
+                                    <a>长岛</a>
+                                    <a>蓬莱</a>
+                                    <a>平遥</a>
+                                    <a>大同</a>
+                                    <a>五台山</a>
+                                    <a>壶口瀑布</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>湖南</a>
+                                    <a>湖北</a>
+                                </dt>
+                                <dd>
+                                    <a>张家界</a>
+                                    <a>凤凰</a>
+                                    <a>郴州</a>
+                                    <a>武汉</a>
+                                    <a>恩施</a>
+                                    <a>神农架</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>安徽</a>
+                                    <a>江西</a>
+                                </dt>
+                                <dd>
+                                    <a>黄山</a>
+                                    <a>宏村</a>
+                                    <a>婺源</a>
+                                    <a>景德镇</a>
+                                    <a>庐山</a>
+                                    <a>三清山</a>
+                                    <a>南昌</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>河北</a>
+                                    <a>河南</a>
+                                </dt>
+                                <dd>
+                                    <a>北戴河</a>
+                                    <a>秦皇岛</a>
+                                    <a>承德</a>
+                                    <a>张北</a>
+                                    <a>少林寺</a>
+                                    <a>洛阳</a>
+                                    <a>龙门石窟</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>内蒙古</a>
+                                    <a>东北</a>
+                                </dt>
+                                <dd>
+                                    <a>呼伦贝尔</a>
+                                    <a>阿尔山</a>
+                                    <a>海拉尔</a>
+                                    <a>哈尔滨</a>
+                                    <a>漠河</a>
+                                    <a>雪乡</a>
+                                    <a>大连</a>
+                                    <a>丹东</a>
+                                    <a>盘锦</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="hot-list clear">
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>台湾</a>
+                                </dt>
+                                <dd>
+                                    <a>台北</a>
+                                    <a>垦丁</a>
+                                    <a>花莲</a>
+                                    <a>高雄</a>
+                                    <a>台中</a>
+                                    <a>九份</a>
+                                    <a>南投</a>
+                                    <a>阿里山</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>香港</a>
+                                    <a>澳门</a>
+                                </dt>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="hot-list clear">
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>日本</a>
+                                </dt>
+                                <dd>
+                                    <a>东京</a>
+                                    <a>大阪</a>
+                                    <a>京都</a>
+                                    <a>冲绳</a>
+                                    <a>北海道</a>
+                                    <a>箱根</a>
+                                    <a>札幌</a>
+                                    <a>奈良</a>
+                                    <a>名古屋</a>
+                                    <a>福冈</a>
+                                    <a>神户</a>
+                                    <a>那霸</a>
+                                    <a>函馆</a>
+                                    <a>小樽</a>
+                                    <a>镰仓</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>韩国</a>
+                                </dt>
+                                <dd>
+                                    <a>济州岛</a>
+                                    <a>首尔</a>
+                                    <a>釜山</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="hot-list clear">
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>泰国</a>
+                                </dt>
+                                <dd>
+                                    <a>普吉岛</a>
+                                    <a>清迈</a>
+                                    <a>曼谷</a>
+                                    <a>苏梅岛</a>
+                                    <a>甲米</a>
+                                    <a>芭提雅</a>
+                                    <a>象岛</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>新加坡</a>
+                                    <a>印尼</a>
+                                </dt>
+                                <dd>
+                                    <a>新加坡</a>
+                                    <a>巴厘岛</a>
+                                    <a>民丹岛</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>马来西亚</a>
+                                </dt>
+                                <dd>
+                                    <a>沙巴</a>
+                                    <a>仙本那</a>
+                                    <a>吉隆坡</a>
+                                    <a>兰卡威</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>越南</a>
+                                </dt>
+                                <dd>
+                                    <a>芽庄</a>
+                                    <a>岘港</a>
+                                    <a>美奈</a>
+                                    <a>大叻</a>
+                                    <a>河内</a>
+                                    <a>胡志明市</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>柬埔寨</a>
+                                    <a>缅甸</a>
+                                </dt>
+                                <dd>
+                                    <a>吴哥窟</a>
+                                    <a>暹粒</a>
+                                    <a>金边</a>
+                                    <a>仰光</a>
+                                    <a>蒲甘</a>
+                                    <a>曼德勒</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>菲律宾</a>
+                                    <a>文莱</a>
+                                </dt>
+                                <dd>
+                                    <a>长滩岛</a>
+                                    <a>杜马盖地</a>
+                                    <a>薄荷岛</a>
+                                    <a>宿雾</a>
+                                    <a>文莱</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="hot-list clear">
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>马尔代夫</a>
+                                </dt>
+                                <dd>
+                                    <a>马累</a>
+                                    <a>阿雅达岛</a>
+                                    <a>薇拉瓦鲁岛</a>
+                                    <a>宁静岛</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>阿联酋</a>
+                                    <a>伊朗</a>
+                                </dt>
+                                <dd>
+                                    <a>迪拜</a>
+                                    <a>阿布扎比</a>
+                                    <a>德黑兰</a>
+                                    <a>伊斯法罕</a>
+                                    <a>设拉子</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>斯里兰卡</a>
+                                </dt>
+                                <dd>
+                                    <a>科伦坡</a>
+                                    <a>康提</a>
+                                    <a>努沃勒埃利耶</a>
+                                    <a>尼甘布</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>尼泊尔</a>
+                                </dt>
+                                <dd>
+                                    <a>加德满都</a>
+                                    <a>博卡拉</a>
+                                    <a>巴德岗</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>印度</a>
+                                </dt>
+                                <dd>
+                                    <a>新德里</a>
+                                    <a>孟买</a>
+                                    <a>阿格拉</a>
+                                    <a>斋普尔</a>
+                                    <a>瓦拉纳西</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="hot-list clear">
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>美国</a>
+                                </dt>
+                                <dd>
+                                    <a>洛杉矶</a>
+                                    <a>旧金山</a>
+                                    <a>纽约</a>
+                                    <a>塞班岛</a>
+                                    <a>夏威夷</a>
+                                    <a>关岛</a>
+                                    <a>西雅图</a>
+                                    <a>华盛顿</a>
+                                    <a>波士顿</a>
+                                    <a>奥兰多</a>
+                                    <a>迈阿密</a>
+                                    <a>芝加哥</a>
+                                    <a>阿拉斯加</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>英国</a>
+                                    <a>爱尔兰</a>
+                                </dt>
+                                <dd>
+                                    <a>伦敦</a>
+                                    <a>爱丁堡</a>
+                                    <a>剑桥</a>
+                                    <a>牛津</a>
+                                    <a>约克</a>
+                                    <a>都柏林</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>意大利</a>
+                                </dt>
+                                <dd>
+                                    <a>罗马</a>
+                                    <a>威尼斯</a>
+                                    <a>佛罗伦萨</a>
+                                    <a>米兰</a>
+                                    <a>五渔村</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>法国</a>
+                                    <a>瑞士</a>
+                                </dt>
+                                <dd>
+                                    <a>巴黎</a>
+                                    <a>普罗旺斯</a>
+                                    <a>卢塞恩</a>
+                                    <a>苏黎世</a>
+                                    <a>因特拉肯</a>
+                                    <a>日内瓦</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>西班牙</a>
+                                </dt>
+                                <dd>
+                                    <a>巴塞罗那</a>
+                                    <a>马德里</a>
+                                    <a>塞维利亚</a>
+                                    <a>格拉纳达</a>
+                                    <a>托莱多</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>葡萄牙</a>
+                                </dt>
+                                <dd>
+                                    <a>里斯本</a>
+                                    <a>波尔图</a>
+                                    <a>辛特拉</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>俄罗斯</a>
+                                </dt>
+                                <dd>
+                                    <a>莫斯科</a>
+                                    <a>贝加尔湖</a>
+                                    <a>圣彼得堡</a>
+                                    <a>海参崴</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>德国</a>
+                                    <a>奥地利</a>
+                                </dt>
+                                <dd>
+                                    <a>慕尼黑</a>
+                                    <a>法兰克福</a>
+                                    <a>柏林</a>
+                                    <a>科隆</a>
+                                    <a>福森</a>
+                                    <a>维也纳</a>
+                                    <a>哈尔施塔特</a>
+                                    <a>萨尔茨堡</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>希腊</a>
+                                    <a>土耳其</a>
+                                </dt>
+                                <dd>
+                                    <a>圣托里尼</a>
+                                    <a>雅典</a>
+                                    <a>伊斯坦布尔</a>
+                                    <a>棉花堡</a>
+                                    <a>卡帕多奇亚</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>捷克</a>
+                                    <a>匈牙利</a>
+                                </dt>
+                                <dd>
+                                    <a>布拉格</a>
+                                    <a>克鲁姆洛夫</a>
+                                    <a>卡罗维发利</a>
+                                    <a>布达佩斯</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>冰岛</a>
+                                </dt>
+                                <dd>
+                                    <a>雷克雅未克</a>
+                                    <a>维克</a>
+                                    <a>阿克雷里</a>
+                                    <a>霍芬</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>荷兰</a>
+                                    <a>比利时</a>
+                                </dt>
+                                <dd>
+                                    <a>阿姆斯特丹</a>
+                                    <a>鹿特丹</a>
+                                    <a>羊角村</a>
+                                    <a>布鲁塞尔</a>
+                                    <a>布鲁日</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>美洲其他</a>
+                                </dt>
+                                <dd>
+                                    <a>加拿大</a>
+                                    <a>巴西</a>
+                                    <a>古巴</a>
+                                    <a>墨西哥</a>
+                                    <a>秘鲁</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>欧洲其他</a>
+                                </dt>
+                                <dd>
+                                    <a>芬兰</a>
+                                    <a>挪威</a>
+                                    <a>丹麦</a>
+                                    <a>瑞典</a>
+                                    <a>塞尔维亚</a>
+                                    <a>克罗地亚</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="hot-list clear">
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>澳大利亚</a>
+                                </dt>
+                                <dd>
+                                    <a>悉尼</a>
+                                    <a>墨尔本</a>
+                                    <a>凯恩斯</a>
+                                    <a>大堡礁</a>
+                                    <a>黄金海岸</a>
+                                    <a>布里斯班</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>新西兰</a>
+                                </dt>
+                                <dd>
+                                    <a>奥克兰</a>
+                                    <a>皇后镇</a>
+                                    <a>基督城</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>澳洲其他</a>
+                                </dt>
+                                <dd>
+                                    <a>帕劳</a>
+                                    <a>斐济</a>
+                                    <a>大溪地</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <dl>
+                                <dt>
+                                    <a>埃及</a>
+                                </dt>
+                                <dd>
+                                    <a>开罗</a>
+                                    <a>卢克索</a>
+                                    <a>阿斯旺</a>
+                                    <a>红海</a>
+                                    <a>亚历山大</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>摩洛哥</a>
+                                </dt>
+                                <dd>
+                                    <a>马拉喀什</a>
+                                    <a>卡萨布兰卡</a>
+                                    <a>非斯</a>
+                                    <a>舍夫沙万</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a>非洲其他</a>
+                                </dt>
+                                <dd>
+                                    <a>毛里求斯</a>
+                                    <a>塞舌尔</a>
+                                    <a>肯尼亚</a>
+                                    <a>马达加斯加</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-line"></div>
+        <!-- 当季推荐 -->
+        <div class="row row-season row-bg">
+            <div class="wrapper">
+                <div class="r-title">
+                    <h2>当季推荐</h2>
+                </div>
+                <div class="r-navbar">
+                    <a ng-repeat="month in [1,2,3,4,5,6,7,8,9,10,11,12]" ng-mouseover="seasonChange($index)" ng-class="monthNum==$index?'active':''">{{month}}月</a>
+                </div>
+                <div class="seasons-mdd">
+                    <div ng-repeat="seasonData in seasonDatas " class="titles clear" ng-show="monthNum==$index">
+                        <div class="item col3">
+                            <a>
+                                <img ng-src="../{{seasonData.img1}}">
+                                <div class="title">{{seasonData.name1}}</div>
+                            </a>
+                        </div>
+                        <div class="item col3">
+                            <a>
+                                <img ng-src="../{{seasonData.img2}}">
+                                <div class="title">{{seasonData.name2}}</div>
+                            </a>
+                        </div>
+                        <div class="item col3">
+                            <a>
+                                <img ng-src="../{{seasonData.img3}}">
+                                <div class="title">{{seasonData.name3}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4">
+                            <a>
+                                <img ng-src="../{{seasonData.img4}}">
+                                <div class="title">{{seasonData.name4}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4">
+                            <a>
+                                <img ng-src="../{{seasonData.img5}}">
+                                <div class="title">{{seasonData.name5}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4">
+                            <a>
+                                <img ng-src="../{{seasonData.img6}}">
+                                <div class="title">{{seasonData.name6}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4">
+                            <a>
+                                <img ng-src="../{{seasonData.img7}}">
+                                <div class="more">
+                                    <span>更多 ></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-line"></div>
+        <!-- 主题精选 -->
+        <div class="row row-theme">
+            <div class="wrapper">
+                <div class="r-title">
+                    <h2>主题精选</h2>
+                </div>
+                <div class="r-navbar">
+                    <a ng-repeat="themeData in ['全年适宜','季节','出行方式','节假日']" ng-mouseover="themeChange($index)" ng-class="themeNum==$index?'active':''">{{themeData}}</a>
+                </div>
+                <div class="theme-mdd">
+                    <div ng-repeat="themesData in themesDatas" class="titles" ng-show="themeNum==$index">
+                        <div class="item col4" ng-if="themesData.name1==''?false:true">
+                            <a>
+                                <img ng-src="../{{themesData.img1}}">
+                                <div class="title">{{themesData.name1}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name2==''?false:true">
+                            <a>
+                                <img ng-src="../{{themesData.img2}}">
+                                <div class="title">{{themesData.name2}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name3==''?false:true">
+                            <a>
+                                <img ng-src="../{{themesData.img3}}">
+                                <div class="title">{{themesData.name3}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name4==''?false:true">
+                            <a>
+                                <img ng-src="../{{themesData.img4}}">
+                                <div class="title">{{themesData.name4}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name5==''?false:true">
+                            <a>
+                                <img ng-src="../{{themesData.img5}}">
+                                <div class="title">{{themesData.name5}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name6==''?false:true">
+                            <a>
+                                <img ng-src="../{{themesData.img6}}">
+                                <div class="title">{{themesData.name6}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name7==''?false:true">
+                            <a>
+                                <img ng-src="../{{themesData.img7}}">
+                                <div class="title">{{themesData.name7}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name8==''?false:true">
+                            <a>
+                                <img ng-src="../{{themesData.img8}}">
+                                <div class="title">{{themesData.name8}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name9==''?false:true">
+                            <a>
+                                <img ng-src="../{{themesData.img9}}">
+                                <div class="title">{{themesData.name9}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name10?true:false">
+                            <a>
+                                <img ng-src="../{{themesData.img10}}">
+                                <div class="title">{{themesData.name10}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name11?true:false">
+                            <a>
+                                <img ng-src="../{{themesData.img11}}">
+                                <div class="title">{{themesData.name11}}</div>
+                            </a>
+                        </div>
+                        <div class="item col4" ng-if="themesData.name12?true:flase">
+                            <a>
+                                <img ng-src="../{{themesData.img12}}">
+                                <div class="title">{{themesData.name12}}</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 主要内容结束 -->
+
+    <!-- 底部开始 -->
+    <div class="footer">
+        <div class="ft-content">
+            <!-- 马蜂窝信息 -->
+            <div class="ft-info">
+                <dl class="ft-info-col ft-info-intro">
+                    <dt>中国领先的自由行服务平台</dt>
+                    <dd>覆盖全球200多个国家和地区</dd>
+                    <dd><strong>100,000,000</strong> 位旅行者</dd>
+                    <dd><strong>920,000</strong> 家国际酒店</dd>
+                    <dd><strong>21,000,000</strong> 条真实点评</dd>
+                    <dd><strong>382,000,000</strong> 次攻略下载</dd>
+                    <dd><strong>中国旅游行业第一部“玩法”</strong></dd>
+                </dl>
+                <dl class="ft-info-col ft-info-about">
+                    <dt>关于我们</dt>
+                    <dd><a href="">关于蚂蜂窝</a></dd>
+                    <dd><a href="">网络信息侵权通知指引</a></dd>
+                    <dd><a href="">隐私政策</a></dd>
+                    <dd><a href="">服务协议</a></dd>
+                    <dd><a href="">联系我们</a></dd>
+                    <dd class="fc-orange"><a href="">加入蚂蜂窝</a></dd>
+                </dl>
+                <dl class="ft-info-col ft-info-service">
+                    <dt class="text-center">旅行服务</dt>
+                    <dd>
+                        <ul class="clear">
+                            <li><a href="">旅游攻略</a></li>
+                            <li><a href="">酒店预订</a></li>
+                            <li><a href="">旅游特价</a></li>
+                            <li><a href="">国际租车</a></li>
+                            <li><a href="">旅游问答</a></li>
+                            <li><a href="">旅游保险</a></li>
+                            <li><a href="">旅游指南</a></li>
+                            <li><a href="">订火车票</a></li>
+                            <li><a href="">旅游资讯</a></li>
+                            <li><a href="">APP下载</a></li>
+                            <li class="fc-orange"><a href="">全球供应商入驻</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="ft-info-col ft-info-qrcode">
+                    <dd>
+                        <span class="ft-qrcode-tejia"></span>
+                        <p>蚂蜂窝良品<br>官方服务号</p>
+                    </dd>
+                    <dd>
+                        <span class="ft-qrcode-weixin"></span>
+                        <p>蚂蜂窝自由行<br>订阅号</p>
+                    </dd>
+                </dl>
+                <dl class="ft-info-social">
+                    <dt>关注我们</dt>
+                    <dd>
+                        <a class="ft-social-weibo"><i class="ft-social-icon"></i></a>
+                        <a class="ft-social-qqt"><i class="ft-social-icon"></i></a>
+                        <a class="ft-social-qzone"><i class="ft-social-icon"></i></a>
+                    </dd>
+                </dl>
+            </div>
+            <!-- 友情链接 -->
+            <div class="ft-links">
+                <a href="" target="_blank">马可波罗</a>
+                <a href="" target="_blank">Onlylady女人志</a>
+                <a href="" target="_blank">艺龙旅游指南</a>
+                <a href="" target="_blank">欣欣旅游网</a>
+                <a href="" target="_blank">户外运动</a>
+                <a href="" target="_blank">365音乐网</a>
+                <a href="" target="_blank">爱问共享资料</a>
+                <a href="" target="_blank">旅游网</a>
+                <a href="" target="_blank">小说网</a>
+                <a href="" target="_blank">学习啦</a>
+                <a href="" target="_blank">游多多自助游</a>
+                <a href="" target="_blank">问答</a>
+                <a href="" target="_blank">火车时刻表</a>
+                <a href="" target="_blank">驴妈妈旅游网</a>
+                <a href="" target="_blank">好豆美食网</a>
+                <a href="" target="_blank">二手车</a>
+                <a href="" target="_blank">绿野户外</a>
+                <a href="" target="_blank">途牛旅游网</a>
+                <a href="" target="_blank">图吧</a>
+                <a href="" target="_blank">SUV联合越野</a>
+                <a href="" target="_blank">手机浏览器</a>
+                <a href="" target="_blank">上海地图</a>
+                <a href="" target="_blank">天气预报查询</a>
+                <a href="" target="_blank">同程旅游</a>
+                <a href="" target="_blank">火车票</a>
+                <a href="" target="_blank">YunOS</a>
+                <a href="" target="_blank">携程旅游</a>
+                <a href="" target="_blank">锦江旅游</a>
+                <a href="" target="_blank">火车时刻表</a>
+                <a href="" target="_blank">TripAdvisor</a>
+                <a href="" target="_blank">天巡网</a>
+                <a href="" target="_blank">短租房</a>
+                <a href="" target="_blank">租租车</a>
+                <a href="" target="_blank">五分旅游网</a>
+                <a href="" target="_blank">酒店预订</a>
+                <a href="" target="_blank">爱旅行网</a>
+                <a href="" target="_blank">旅游</a>
+                <a href="" target="_blank">旅游网</a>
+                <a href="" target="_blank">wed114结婚网</a>
+                <a href="" target="_blank">车讯网</a>
+                <a href="" target="_blank">遨游旅游网</a>
+                <a href="" target="_blank">手机</a>
+                <a href="" target="_blank">更多友情链接>></a>
+            </div>
+            <!-- 版权 -->
+            <div class="ft-copyright">
+                <div class="ft-safety">
+                    <a class="s-a"></a>
+                    <a class="s-b"></a>
+                    <a class="s-c"></a>
+                </div>
+                <a href="index.html">
+                    <i class="ft-mfw-logo"></i>
+                </a>
+                <p>© 2017 Mafengwo.cn <a href="">京ICP备11015476号</a> 京公网安备110105013401号 <a href="">京ICP证110318号</a></p>
+                <p><a href="">营业执照</a> 新出网证(京)字242号 全国统一客服电话：<span class="fc-orange">4006-345-678</span> <a href="" class="fc-orange">网站地图</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- 底部结束 -->
+
+</body>
+
+</html>

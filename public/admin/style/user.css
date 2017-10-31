@@ -1,0 +1,28 @@
+ul ,li{
+    list-style: none;
+    display: inline-block;
+    margin:5px;
+  }
+  
+  table td {
+    text-align: center;
+  }
+  
+  .pageback {
+      width: 80%;
+  }
+
+  body {
+    background-color: #F0F3F4;
+    color: #666;
+  }
+
+  body h3 {
+    color: #009688;
+  }
+
+  body p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }

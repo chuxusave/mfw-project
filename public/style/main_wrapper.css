@@ -1,0 +1,566 @@
+.mfw-wrapper {
+    width: 700px;
+    color: #666;
+}
+
+.mfw-wrapper .da-banner {
+    position: relative;
+}
+
+.mfw-wrapper .da-banner>img {
+    position: absolute;
+    bottom: 8px;
+    left: 4px;
+    width: 22px;
+    height: 12px;
+}
+
+.mfw-sales {
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+.mfw-sales .hd {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #333;
+    line-height: 35px;
+}
+
+.mfw-sales .bd ul{
+    margin-right: -20px;
+}
+
+.mfw-sales .bd ul li {
+    width: 220px;
+    margin-right: 20px;
+}
+
+.mfw-sales .bd ul li a {
+    display: block;
+    -webkit-user-select: none;
+}
+
+.mfw-sales .bd ul li a .image {
+    height: 135px;
+    position: relative;
+}
+
+.mfw-sales .bd ul li a .image img {
+    height: 135px;
+    width: 220px;
+    border: 0;
+    vertical-align: middle;
+}
+
+.mfw-sales .bd ul li a .image .discount {
+    position: absolute;
+    top: 0;
+    right: -4px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    background-color: #ff6155;
+    font-size: 14px;
+    color: #fff;
+}
+
+.mfw-sales .bd ul li a .image .discount:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    border-top: 4px solid #7e1811;
+    border-right: 4px dashed transparent;
+    border-bottom: 4px dashed transparent;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0;
+}
+
+.mfw-sales .bd ul li a .image .discount b {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mfw-sales .bd ul li a .image .info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 35px;
+    background-color: rgba(255,97,85,.9);
+    padding: 0 8px;
+    line-height: 34px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.mfw-sales .bd ul li a .image .info .price {
+    padding: 0 5px 5px;
+    float: right;
+}
+
+.mfw-sales .bd ul li a .image .info .price strong {
+    font-size: 27px;
+}
+
+.mfw-sales .bd ul li a h3 {
+    height: 42px;
+    overflow: hidden;
+    margin-top: 4px;
+    padding: 5px 10px 0;
+    font-size: 14px;
+    color: #000;
+    line-height: 20px;
+    font-weight: normal;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    z-index: 5;
+}
+
+.mfw-sales .bd ul li a>.price {
+    text-align: right;
+    font-size: 16px;
+    color: #ff9d00;
+    padding: 0 5px 5px;
+}
+
+.mfw-sales .bd ul li a>.price strong {
+    font-size: 18px;
+}
+
+.mfw-sales .bd ul li a>.price em {
+    font-style: normal;
+    font-size: 14px;
+}
+
+.mfw-sales .bd ul li a:hover h3{
+    height: 81px;
+    margin-top: -35px;
+    background: rgb(248,248,248);
+    color: #ff9d00;
+}
+
+.mfw-sales .bd ul li a:hover>.price {
+    background: rgb(248,248,248);
+}
+
+.mfw-travelnotes .navbar{
+    margin-bottom: 20px;
+    height: 50px;
+    line-height: 36px;
+    font-size: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e4e4e4;
+    color: #666;
+}
+
+.mfw-travelnotes .navbar .tn-nav {
+    float: left;
+}
+
+.mfw-travelnotes .navbar li {
+    float: left;
+    display: inline;
+    text-align: center;
+}
+
+.mfw-travelnotes .navbar li a {
+    font-size: 18px;
+}
+
+.mfw-travelnotes .navbar .active {
+    padding-bottom: 6px;
+    border-bottom: 3px solid #ff9d00;
+    position: relative;
+    z-index: 11;
+}
+
+.mfw-travelnotes .navbar .tn-nav-hot {
+    width: 170px;
+}
+
+.mfw-travelnotes .navbar .tn-nav-new {
+    width: 120px;
+}
+
+.mfw-travelnotes .navbar .tn-nav-hot .tn-menu {
+    display: inline-block;
+    margin-left: 7px;
+    line-height: 20px;
+    border: 1px solid #e5e5e5;
+    color: #666;
+    font-size: 12px;
+    padding: 0 10px 0 8px;
+    cursor: pointer;
+    vertical-align: 2px;
+}
+
+.mfw-travelnotes .navbar .tn-nav-hot .tn-menu .tn-menu-icon {
+    float: left;
+    margin: 6px 5px 0 0;
+    width: 11px;
+    height: 8px;
+    background: url("../img/index-sprites8@2x.png") no-repeat 0 -130px;
+    background-size: 200px;
+}
+
+.mfw-travelnotes .navbar .tn-write {
+    float: right;
+    width: 140px;
+}
+
+.mfw-travelnotes .navbar .tn-write .btn-add {
+    display: block;
+    height: 36px;
+    background-color: #ff9d00;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.mfw-travelnotes .navbar .tn-write .btn-add i {
+    display: inline-block;
+    margin-right: 5px;
+    width: 18px;
+    height: 17px;
+    background-position: 0 0;
+    overflow: hidden;
+    vertical-align: -3px;
+    background: url("../img/index-sprites9.png") no-repeat;
+    background-size: 200px;
+}
+
+.mfw-travelnotes .navbar .tn-tips {
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+    color: #ff9d00;
+}
+
+.mfw-travelnotes .navbar .tn-tips:hover {
+    text-decoration: underline;
+}
+
+.mfw-travelnotes .navbar .tn-tips i {
+    float: left;
+    margin: 9px 4px 0 0;
+    width: 16px;
+    height: 16px;
+    background: url("../img/index-sprites9.png") no-repeat -100px -30px;
+    background-size: 200px;
+    overflow: hidden;
+}
+
+.mfw-travelnotes .tn-dropdown-pop {
+    position: absolute;
+    z-index: 10;
+    margin: -21px 0 0 -20px;
+    width: 718px;
+    padding: 2px 0;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    box-shadow: 0 3px 3px rgba(0,0,0,.15);
+}
+
+.mfw-travelnotes .tn-dropdown-pop .close {
+    font-family: serif,verdana,Arial,"Lucida Grande","Microsoft Yahei","Hiragino Sans GB","Hiragino Sans GB W3",SimSun,STHeiti;
+    font-style: normal;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    line-height: 14px;
+    border: 1px solid #e8e8e8;
+    color: #ccc;
+    overflow: hidden;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    background: #fff;
+    z-index: 6;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section {
+    margin: 40px 30px;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .label {
+    float: left;
+    width: 56px;
+    text-align: right;
+    font-size: 16px;
+    color: #333;
+    line-height: 24px;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .section-cont {
+    margin-left: 86px;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .section-cont .interest-list {
+    margin: 0 -10px -20px 0;
+    clear: both;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .section-cont .interest-list li {
+    float: left;
+    width: 260px;
+    height: 75px;
+    margin: 0 30px 20px 0;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .section-cont .interest-list li a {
+    display: block;
+    height: 75px;
+    overflow: hidden;
+    color: #333;
+    cursor: pointer;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .section-cont .interest-list li a .img {
+    float: left;
+    width: 110px;
+    height: 75px;
+    margin-right: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .section-cont .interest-list li a .img img {
+    width: 110px;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .section-cont .interest-list li a h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .section-cont .interest-list li a p {
+    height: 40px;
+    font-size: 12px;
+    line-height: 20px;
+    overflow: hidden;
+    color: #999;
+}
+
+.mfw-travelnotes .tn-dropdown-pop .section .section-cont .interest-list li:hover a h3{
+    color: #ff9d00;
+}
+
+.mfw-travelnotes .tn-selected .tn-tag {
+    padding: 0 5px 0 20px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
+    border-radius: 13px;
+    background-color: #f6f6f6;
+    border: 1px solid #e5e5e5;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.mfw-travelnotes .tn-selected .tn-tag:hover {
+    background: #ff9d00;
+    border-color: #ff9d00;
+    color: #fff;
+}
+
+.mfw-travelnotes .tn-selected .tn-tag:hover i {
+    background: url("../img/index-sprites9.png") no-repeat -145px -30px;
+}
+
+.mfw-travelnotes .tn-selected .tn-tag i {
+    display: inline-block;
+    margin-left: 12px;
+    margin-right: 7px;
+    width: 5px;
+    height: 5px;
+    background: url("../img/index-sprites9.png") no-repeat -135px -30px;
+    background-size: 200px;
+    vertical-align: 2px;
+    border-radius: 20%;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item {
+    padding: 15px 0!important;
+    height: 180px;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item:hover {
+    background-color: #f8f8f8;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item:hover .tn-wrapper dl dt a{
+    color:#ff9d00;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-image {
+    float: left;
+    width: 220px;
+    height: 150px;
+    position: relative;    
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-image img {
+    width: 220px;
+    height: 150px;
+    border: 0;
+    vertical-align: middle;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper {
+    float: right;
+    width: 455px;
+    height: 150px;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper dl {
+    height: 117px;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper dl dt{
+    height: 26px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper dl dt a {
+    width: 420px;
+    height: 26px;
+    display: block;
+    color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper dl dd{
+    line-height: 20px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper dl dd a {
+    color: #666;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper .tn-extra {
+    height: 33px;
+    overflow: hidden;
+    line-height: 33px;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper .tn-extra .tn-ding {
+    float: right;
+    color: #ff9d00;
+    font-size: 14px;
+    text-align: right;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper .tn-extra .tn-ding .btn-ding {
+    display: inline-block;
+    float: right;
+    margin-left: 8px;
+    width: 38px;
+    height: 33px;
+    overflow: hidden;
+    background: url("../img/index-sprites9.png") no-repeat -60px 0;
+    background-size: 200px;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper .tn-extra .tn-place {
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper .tn-extra .tn-place i{
+    float: left;
+    margin: 8px 5px 0 0;
+    width: 14px;
+    height: 16px;
+    overflow: hidden;
+    background: url("../img/index-sprites9.png") no-repeat 0 -50px;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper .tn-extra .tn-place a {
+    color: #666;
+    font-size: 12px;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper .tn-extra .tn-user {
+    color: #ff9d00;
+    display: inline-block;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper .tn-extra .tn-nums {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #999;
+    display: inline-block;
+}
+
+.mfw-travelnotes .tn-content .tn-list .tn-item .tn-wrapper .tn-extra .tn-nums i {
+    float: left;
+    margin: 10px 5px 0 0;
+    width: 18px;
+    height: 14px;
+    background: url("../img/index-sprites9.png") no-repeat -30px -50px;
+}
+
+.mfw-travelnotes .tn-content .m-pagination {
+    padding: 20px 5px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    padding-right: 0;
+}
+
+.mfw-travelnotes .tn-content .m-pagination .count {
+    padding-right: 12px;
+} 
+
+.mfw-travelnotes .tn-content .m-pagination .pageitem {
+    display: inline-block;
+    margin-right: 1px;
+    margin-left: 1px;
+    padding: 0 7px;
+    border: 0 none;
+    background: #eee;
+    border-radius: 4px;
+    color: #666;
+    vertical-align: middle;
+}
+
+.mfw-travelnotes .tn-content .m-pagination .pageitem:hover {
+    background: #ff9d00;
+    color: white;
+}
+
+.da-banner-row {
+    clear: both;
+    width: 1000px;
+    position: relative;
+}
+
+.da-banner-row>img {
+    position: absolute;
+    bottom: 8px;
+    left: 4px;
+    width: 22px;
+    height: 12px;
+}
+
+
+
+
+
+
+
+

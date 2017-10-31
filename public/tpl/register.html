@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>帐号注册 - 蚂蜂窝</title>
+    <link rel="shortcut icon" href="../img/bitbug_favicon.ico">
+    <link href="../style/register.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/resize.css">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/register.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="registerC">
+    <div class="wrapper">
+        <a class="logo" href="../index.html" title="返回首页"></a>
+        <div class="signup-forms">
+            <form class="register-form" name="user">
+                <span>手机号码</span> <input ng-model="Name" name="Name" class="username" type="text" placeholder="请输入您的手机号码"
+                    ng-maxlength="11" ng-pattern="regexName" required>
+                <i ng-show="user.Name.$error.required">必填</i>
+                <i ng-show="user.Name.$valid">✅</i>
+                <div class="errorTips">
+                    <i ng-show="user.Name.$error.maxlength">请输入正确的手机号码!</i>
+                </div>
+                <br><span>密码</span> <input ng-model="Pwd" name="Pwd" class="pwd" type="text" placeholder="请输入密码" ng-minlength="6"
+                    ng-maxlength="18" required>
+                <i ng-show="user.Pwd.$error.required">必填</i>
+                <i ng-style="{color:'red'}" ng-show="user.Pwd.$error.minlength">至少6位</i>
+                <i ng-style="{color:'red'}" ng-show="user.Pwd.$error.maxlength">最多18位</i>
+                <i ng-show="user.Pwd.$valid">✅</i>
+                <br> <span>确认密码</span> <input ng-model="confirmPwd" name="confirmPwd" class="confirm-pwd" type="text" placeholder="请确认密码"
+                    required>
+                <i ng-show="user.confirmPwd.$error.required">必填</i>
+                <i ng-style="{color:'red',whiteSpace:'nowrap'}" ng-show="confirmPwd !== Pwd&&!user.confirmPwd.$error.required">密码不一致</i>
+                <i ng-show="user.confirmPwd.$valid&&confirmPwd == Pwd">✅</i>
+                <br> <span>验证码</span>
+                <input ng-model="Code" name="Code" type="text" class="code" name="code" placeholder="请输入验证码" required>
+                <i ng-show="user.Code.$error.required">必填</i>
+
+                <br><label for="code"><strong id="code"><img src="/code.png"></strong> 看不清换一张</label>
+                <br><input ng-click="signin()" ng-disabled="user.$invalid" class="btn" type="button" value="立即注册">
+            </form>
+            <div class="agreement text-right">注册视为同意<a href="#">《蚂蜂窝用户使用协议》</a></div>
+        </div>
+        <div class="bottom-link text-center">
+            已经注册?<a href="../tpl/login.html">马上登录</a>
+        </div>
+    </div>
+    <div class="fullscreen-bg">
+        <img ng-src="../{{bgSrc}}">
+    </div>
+</body>
+
+</html>
