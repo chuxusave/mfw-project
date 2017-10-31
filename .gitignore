@@ -1,3 +1,4 @@
 .DS_Store
 public/img/
 public/note/img
+node_modules
